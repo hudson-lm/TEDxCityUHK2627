@@ -10,6 +10,7 @@ import SpeakerPage from "./Pages/Speakerpage";
 import PerformerPage from "./Pages/Performerpage";
 import AboutTedx from "./Components/aboutTedx";
 import RegistrationPage from "./Pages/registrationpage";
+import CommitteeRegistrationPage from "./Pages/committeeRegistrationPage";
 
 const Container = styled.div`
   overflow-x: hidden;
@@ -44,6 +45,7 @@ function AppContent() {
         <Route path="/crew" element={<TeamPage isMobile={isMobile} isTablet={isTablet} />} />
         <Route path="/pastevent" element={<PastEventPage />} />
         <Route path="/registration" element={<RegistrationPage />} />
+        <Route path="/committee-registration" element={<CommitteeRegistrationPage />} />
         <Route path="/speaker/:path" element={<SpeakerPage />} />
       </Routes>
       {!isAboutPage && <Footer />}

@@ -44,3 +44,35 @@ export const fetchAllRegistrations = async () => {
     return { success: false, error: error.message };
   }
 };
+
+export const submitCommitteeApplication = async (applicationData) => {
+  try {
+    const { error } = await supabase
+      .from('committee_registrations')
+      .insert([
+        {
+          full_name: applicationData.fullName.trim(),
+          preferred_name: applicationData.preferredName.trim() || null,
+          email_address: applicationData.email.trim().toLowerCase(),
+          phone_number: applicationData.phone.trim(),
+          student_id: applicationData.studentId.trim().toUpperCase(),
+          programme: applicationData.programme.trim(),
+          year_of_study: applicationData.yearOfStudy,
+          first_choice: applicationData.firstChoice,
+          second_choice: applicationData.secondChoice || null,
+          motivation: applicationData.motivation.trim(),
+          experience: applicationData.experience.trim() || null,
+          availability_acknowledged: applicationData.availabilityAcknowledged,
+        },
+      ]);
+
+    if (error) {
+      throw error;
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error('Committee application error:', error.message);
+    return { success: false, error: error.message };
+  }
+};

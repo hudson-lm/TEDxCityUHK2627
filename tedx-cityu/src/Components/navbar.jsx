@@ -117,6 +117,7 @@ export default function Navbar() {
     { label: "About", url: "/about" },
     { label: "Crew", url: "/crew" },
     { label: "Past Events", url: "/pastevent" },
+    { label: "Join Committee", url: "/committee-registration" },
     { label: "Registration", url: "/registration" },
   ];
   const navigate = useNavigate();
@@ -159,7 +160,7 @@ export default function Navbar() {
           <NavSelectionWrapper className="flex items-center justify-around h-14">
             {Selection_list.map((selection, index) => (
               <Selection
-                className="text-black mx-11 text-base md:text-xl hover:text-yellow-400"
+                className="text-black mx-6 text-base md:text-lg hover:text-yellow-400"
                 key={index}
                 to={selection.url}
                 activeClassName="active"
