@@ -1,6 +1,15 @@
 import { supabase } from '../supabaseClient';
 
+const missingConfigurationResult = () => ({
+  success: false,
+  error: 'Supabase is not configured. Add REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY to .env.local.',
+});
+
 export const submitRegistration = async (registrationData) => {
+  if (!supabase) {
+    return missingConfigurationResult();
+  }
+
   try {
     const { data, error } = await supabase
       .from('registration')
@@ -28,6 +37,10 @@ export const submitRegistration = async (registrationData) => {
 };
 
 export const fetchAllRegistrations = async () => {
+  if (!supabase) {
+    return missingConfigurationResult();
+  }
+
   try {
     const { data, error } = await supabase
       .from('registration')
@@ -46,6 +59,10 @@ export const fetchAllRegistrations = async () => {
 };
 
 export const submitCommitteeApplication = async (applicationData) => {
+  if (!supabase) {
+    return missingConfigurationResult();
+  }
+
   try {
     const { error } = await supabase
       .from('committee_registrations')
