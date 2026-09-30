@@ -1,6 +1,7 @@
 import { supabase } from '../supabaseClient';
 
 const APPLICATION_FILES_BUCKET = 'committee-application-files';
+const PORTFOLIO_REQUIRED_DEPARTMENTS = ['Creative', 'Marketing and Communication'];
 
 const createApplicationId = () => {
   if (typeof crypto !== 'undefined' && crypto.randomUUID) {
@@ -105,11 +106,11 @@ export const submitCommitteeApplication = async (applicationData) => {
   }
 
   try {
-    const isCreativeApplicant = applicationData.firstChoice === 'Creative'
-      || applicationData.secondChoice === 'Creative';
+    const requiresPortfolio = PORTFOLIO_REQUIRED_DEPARTMENTS.includes(applicationData.firstChoice)
+      || PORTFOLIO_REQUIRED_DEPARTMENTS.includes(applicationData.secondChoice);
 
-    if (isCreativeApplicant && !applicationData.portfolioFile) {
-      throw new Error('Portfolio is required for Creative applicants.');
+    if (requiresPortfolio && !applicationData.portfolioFile) {
+      throw new Error('Portfolio is required for Creative and Marketing and Communication applicants.');
     }
 
     const applicationId = createApplicationId();
@@ -135,7 +136,6 @@ export const submitCommitteeApplication = async (applicationData) => {
           first_choice: applicationData.firstChoice,
           second_choice: applicationData.secondChoice || null,
           motivation: applicationData.motivation.trim(),
-          experience: applicationData.experience.trim() || null,
           cv_storage_path: cvStoragePath,
           portfolio_storage_path: portfolioStoragePath,
           availability_acknowledged: applicationData.availabilityAcknowledged,

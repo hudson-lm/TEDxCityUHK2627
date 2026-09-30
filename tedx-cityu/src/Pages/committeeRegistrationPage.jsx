@@ -26,6 +26,7 @@ const CV_MAX_SIZE = 10 * 1024 * 1024;
 const PORTFOLIO_MAX_SIZE = 20 * 1024 * 1024;
 const CV_ACCEPT = '.pdf,.doc,.docx';
 const PORTFOLIO_ACCEPT = '.pdf,.doc,.docx,.ppt,.pptx,.zip,.jpg,.jpeg,.png';
+const PORTFOLIO_REQUIRED_DEPARTMENTS = ['Creative', 'Marketing and Communication'];
 
 const Page = styled.main`
   min-height: 100vh;
@@ -316,7 +317,6 @@ const initialForm = {
   firstChoice: '',
   secondChoice: '',
   motivation: '',
-  experience: '',
   cvFile: null,
   portfolioFile: null,
   availabilityAcknowledged: false,
@@ -335,7 +335,7 @@ const friendlyError = (error = '') => {
     return 'Applications are not configured yet. Please contact the TEDxCityUHK team.';
   }
   if (normalized.includes('portfolio is required')) {
-    return 'Please attach a portfolio because Creative is one of your department choices.';
+    return 'Please attach a portfolio because Creative or Marketing and Communication is one of your department choices.';
   }
   if (normalized.includes('file') || normalized.includes('storage') || normalized.includes('mime')) {
     return 'We could not upload one of your files. Check its format and size, then try again.';
@@ -355,7 +355,8 @@ export default function CommitteeRegistrationPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState('');
-  const isCreativeApplicant = form.firstChoice === 'Creative' || form.secondChoice === 'Creative';
+  const requiresPortfolio = PORTFOLIO_REQUIRED_DEPARTMENTS.includes(form.firstChoice)
+    || PORTFOLIO_REQUIRED_DEPARTMENTS.includes(form.secondChoice);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -376,8 +377,8 @@ export default function CommitteeRegistrationPage() {
       return;
     }
 
-    if (isCreativeApplicant && !form.portfolioFile) {
-      setMessage('Please attach a portfolio because Creative is one of your department choices.');
+    if (requiresPortfolio && !form.portfolioFile) {
+      setMessage('Please attach a portfolio because Creative or Marketing and Communication is one of your department choices.');
       return;
     }
 
@@ -494,11 +495,6 @@ export default function CommitteeRegistrationPage() {
                 <HelpText>At least 40 characters; maximum 2,000.</HelpText>
               </Field>
 
-              <Field>
-                <Label htmlFor="experience">Relevant experience or skills</Label>
-                <Textarea id="experience" name="experience" value={form.experience} onChange={handleChange} maxLength="2000" placeholder="Projects, societies, tools, languages, or anything else that may help us get to know you." />
-              </Field>
-
               <Grid>
                 <Field>
                   <Label htmlFor="cvFile">CV / résumé</Label>
@@ -506,16 +502,16 @@ export default function CommitteeRegistrationPage() {
                   <HelpText>PDF, DOC, or DOCX; maximum 10 MB.</HelpText>
                 </Field>
                 <Field>
-                  <Label htmlFor="portfolioFile">Portfolio {isCreativeApplicant ? '*' : ''}</Label>
+                  <Label htmlFor="portfolioFile">Portfolio {requiresPortfolio ? '*' : ''}</Label>
                   <FileInput
                     id="portfolioFile"
                     name="portfolioFile"
                     type="file"
                     accept={PORTFOLIO_ACCEPT}
                     onChange={handleChange}
-                    required={isCreativeApplicant}
+                    required={requiresPortfolio}
                   />
-                  <HelpText>Required when Creative is either choice. PDF, Office file, ZIP, JPG, or PNG; maximum 20 MB.</HelpText>
+                  <HelpText>Required when Creative or Marketing and Communication is either choice. PDF, Office file, ZIP, JPG, or PNG; maximum 20 MB.</HelpText>
                 </Field>
               </Grid>
 
