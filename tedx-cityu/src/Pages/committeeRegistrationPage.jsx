@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import '@fontsource/commissioner/700.css';
+import '@fontsource/commissioner/800.css';
 import { submitCommitteeApplication } from '../services/registrationService';
 
 const DEPARTMENTS = [
@@ -66,19 +68,21 @@ const HeroInner = styled.div`
 const Eyebrow = styled.p`
   margin: 0 0 1rem;
   color: #eb0028;
-  font-family: 'Bungee', sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.18em;
+  font-family: 'Commissioner', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
 `;
 
 const HeroTitle = styled.h1`
   max-width: 850px;
   margin: 0;
-  font-family: 'Bungee', sans-serif;
-  font-size: clamp(2.7rem, 8vw, 6.5rem);
-  line-height: 0.98;
-  text-transform: uppercase;
+  font-family: 'Commissioner', sans-serif;
+  font-size: clamp(3rem, 8vw, 6.7rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.94;
 
   span { color: #eb0028; }
 `;
