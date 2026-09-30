@@ -4,7 +4,7 @@
 
 This repository contains the source code and assets for the website of the 2026 TEDxCityUHK event series. The site highlights the annual theme, showcases speakers and performers, and introduces the student teams that organize the event.
 
-The site includes separate attendee and committee registration flows. Committee applications are available at `/committee-registration`. Before deploying that route, apply `tedx-cityu/supabase/migrations/20260930000000_create_committee_registrations.sql` to the Supabase project.
+The site includes separate attendee and committee registration flows. Committee applications are available at `/committee-registration`. Before deploying that route, apply the SQL migrations in `tedx-cityu/supabase/migrations/` to the Supabase project in timestamp order. The second migration creates the private bucket used for CV and portfolio uploads.
 
 ## Project Structure
 

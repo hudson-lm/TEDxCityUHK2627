@@ -1,5 +1,46 @@
 import { supabase } from '../supabaseClient';
 
+const APPLICATION_FILES_BUCKET = 'committee-application-files';
+
+const createApplicationId = () => {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (character) => {
+    const randomValue = Math.floor(Math.random() * 16);
+    const value = character === 'x' ? randomValue : (randomValue & 0x3) | 0x8;
+    return value.toString(16);
+  });
+};
+
+const safeFileName = (name) => name
+  .normalize('NFKD')
+  .replace(/[^a-zA-Z0-9._-]+/g, '-')
+  .replace(/^-+|-+$/g, '')
+  .slice(-180) || 'file';
+
+const uploadApplicationFile = async (applicationId, fileType, file) => {
+  if (!file) {
+    return null;
+  }
+
+  const path = `${applicationId}/${fileType}-${safeFileName(file.name)}`;
+  const { error } = await supabase.storage
+    .from(APPLICATION_FILES_BUCKET)
+    .upload(path, file, {
+      cacheControl: '3600',
+      contentType: file.type || undefined,
+      upsert: false,
+    });
+
+  if (error) {
+    throw error;
+  }
+
+  return path;
+};
+
 const missingConfigurationResult = () => ({
   success: false,
   error: 'Supabase is not configured. Add REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY to .env.local.',
@@ -64,10 +105,26 @@ export const submitCommitteeApplication = async (applicationData) => {
   }
 
   try {
+    const isCreativeApplicant = applicationData.firstChoice === 'Creative'
+      || applicationData.secondChoice === 'Creative';
+
+    if (isCreativeApplicant && !applicationData.portfolioFile) {
+      throw new Error('Portfolio is required for Creative applicants.');
+    }
+
+    const applicationId = createApplicationId();
+    const cvStoragePath = await uploadApplicationFile(applicationId, 'cv', applicationData.cvFile);
+    const portfolioStoragePath = await uploadApplicationFile(
+      applicationId,
+      'portfolio',
+      applicationData.portfolioFile,
+    );
+
     const { error } = await supabase
       .from('committee_registrations')
       .insert([
         {
+          id: applicationId,
           full_name: applicationData.fullName.trim(),
           preferred_name: applicationData.preferredName.trim() || null,
           email_address: applicationData.email.trim().toLowerCase(),
@@ -79,6 +136,8 @@ export const submitCommitteeApplication = async (applicationData) => {
           second_choice: applicationData.secondChoice || null,
           motivation: applicationData.motivation.trim(),
           experience: applicationData.experience.trim() || null,
+          cv_storage_path: cvStoragePath,
+          portfolio_storage_path: portfolioStoragePath,
           availability_acknowledged: applicationData.availabilityAcknowledged,
         },
       ]);

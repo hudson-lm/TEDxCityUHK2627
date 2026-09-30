@@ -22,6 +22,11 @@ const YEARS_OF_STUDY = [
   'Other',
 ];
 
+const CV_MAX_SIZE = 10 * 1024 * 1024;
+const PORTFOLIO_MAX_SIZE = 20 * 1024 * 1024;
+const CV_ACCEPT = '.pdf,.doc,.docx';
+const PORTFOLIO_ACCEPT = '.pdf,.doc,.docx,.ppt,.pptx,.zip,.jpg,.jpeg,.png';
+
 const Page = styled.main`
   min-height: 100vh;
   color: #111;
@@ -201,6 +206,20 @@ const HelpText = styled.p`
   line-height: 1.4;
 `;
 
+const FileInput = styled(Input)`
+  padding: 0.65rem;
+
+  &::file-selector-button {
+    margin-right: 0.8rem;
+    padding: 0.55rem 0.8rem;
+    color: #fff;
+    background: #111;
+    border: 0;
+    font: 700 0.85rem 'Poppins', sans-serif;
+    cursor: pointer;
+  }
+`;
+
 const CheckboxLabel = styled.label`
   display: flex;
   gap: 0.8rem;
@@ -298,6 +317,8 @@ const initialForm = {
   secondChoice: '',
   motivation: '',
   experience: '',
+  cvFile: null,
+  portfolioFile: null,
   availabilityAcknowledged: false,
   privacyConsent: false,
 };
@@ -313,7 +334,20 @@ const friendlyError = (error = '') => {
   if (normalized.includes('permission') || normalized.includes('row-level security')) {
     return 'Applications are not configured yet. Please contact the TEDxCityUHK team.';
   }
+  if (normalized.includes('portfolio is required')) {
+    return 'Please attach a portfolio because Creative is one of your department choices.';
+  }
+  if (normalized.includes('file') || normalized.includes('storage') || normalized.includes('mime')) {
+    return 'We could not upload one of your files. Check its format and size, then try again.';
+  }
   return 'Your application could not be submitted right now. Please try again shortly.';
+};
+
+const validateFile = (file, maxSize, label) => {
+  if (file && file.size > maxSize) {
+    return `${label} must be smaller than ${maxSize / (1024 * 1024)} MB.`;
+  }
+  return '';
 };
 
 export default function CommitteeRegistrationPage() {
@@ -321,14 +355,16 @@ export default function CommitteeRegistrationPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState('');
+  const isCreativeApplicant = form.firstChoice === 'Creative' || form.secondChoice === 'Creative';
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
   const handleChange = (event) => {
-    const { name, value, type, checked } = event.target;
-    setForm((current) => ({ ...current, [name]: type === 'checkbox' ? checked : value }));
+    const { name, value, type, checked, files } = event.target;
+    const nextValue = type === 'checkbox' ? checked : type === 'file' ? files?.[0] || null : value;
+    setForm((current) => ({ ...current, [name]: nextValue }));
   };
 
   const handleSubmit = async (event) => {
@@ -337,6 +373,18 @@ export default function CommitteeRegistrationPage() {
 
     if (form.secondChoice && form.firstChoice === form.secondChoice) {
       setMessage('Please select two different department preferences.');
+      return;
+    }
+
+    if (isCreativeApplicant && !form.portfolioFile) {
+      setMessage('Please attach a portfolio because Creative is one of your department choices.');
+      return;
+    }
+
+    const fileError = validateFile(form.cvFile, CV_MAX_SIZE, 'Your CV')
+      || validateFile(form.portfolioFile, PORTFOLIO_MAX_SIZE, 'Your portfolio');
+    if (fileError) {
+      setMessage(fileError);
       return;
     }
 
@@ -450,6 +498,26 @@ export default function CommitteeRegistrationPage() {
                 <Label htmlFor="experience">Relevant experience or skills</Label>
                 <Textarea id="experience" name="experience" value={form.experience} onChange={handleChange} maxLength="2000" placeholder="Projects, societies, tools, languages, or anything else that may help us get to know you." />
               </Field>
+
+              <Grid>
+                <Field>
+                  <Label htmlFor="cvFile">CV / résumé</Label>
+                  <FileInput id="cvFile" name="cvFile" type="file" accept={CV_ACCEPT} onChange={handleChange} />
+                  <HelpText>PDF, DOC, or DOCX; maximum 10 MB.</HelpText>
+                </Field>
+                <Field>
+                  <Label htmlFor="portfolioFile">Portfolio {isCreativeApplicant ? '*' : ''}</Label>
+                  <FileInput
+                    id="portfolioFile"
+                    name="portfolioFile"
+                    type="file"
+                    accept={PORTFOLIO_ACCEPT}
+                    onChange={handleChange}
+                    required={isCreativeApplicant}
+                  />
+                  <HelpText>Required when Creative is either choice. PDF, Office file, ZIP, JPG, or PNG; maximum 20 MB.</HelpText>
+                </Field>
+              </Grid>
 
               <CheckboxLabel>
                 <input type="checkbox" name="availabilityAcknowledged" checked={form.availabilityAcknowledged} onChange={handleChange} required />
