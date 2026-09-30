@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { submitCommitteeApplication } from '../services/registrationService';
 
 const DEPARTMENTS = [
-  'Curators',
   'Creative',
   'Technical',
   'Marketing and Communication',
@@ -335,7 +334,7 @@ const friendlyError = (error = '') => {
     return 'Applications are not configured yet. Please contact the TEDxCityUHK team.';
   }
   if (normalized.includes('portfolio is required')) {
-    return 'Please attach a portfolio because Creative or Marketing and Communication is one of your department choices.';
+    return 'Please attach a portfolio because Creative or Marketing & Communication is one of your department choices.';
   }
   if (normalized.includes('file') || normalized.includes('storage') || normalized.includes('mime')) {
     return 'We could not upload one of your files. Check its format and size, then try again.';
@@ -378,7 +377,7 @@ export default function CommitteeRegistrationPage() {
     }
 
     if (requiresPortfolio && !form.portfolioFile) {
-      setMessage('Please attach a portfolio because Creative or Marketing and Communication is one of your department choices.');
+      setMessage('Please attach a portfolio because Creative or Marketing & Communication is one of your department choices.');
       return;
     }
 
@@ -421,7 +420,6 @@ export default function CommitteeRegistrationPage() {
           <ul>
             <li>Choose the departments that best match your interests.</li>
             <li>Be specific about the skills and perspective you can bring.</li>
-            <li>Use an email address you check regularly.</li>
             <li>Shortlisted applicants will be contacted by the team.</li>
           </ul>
         </Aside>
@@ -511,7 +509,7 @@ export default function CommitteeRegistrationPage() {
                     onChange={handleChange}
                     required={requiresPortfolio}
                   />
-                  <HelpText>Required when Creative or Marketing and Communication is either choice. PDF, Office file, ZIP, JPG, or PNG; maximum 20 MB.</HelpText>
+                  <HelpText>Required for Creative or Marketing &amp; Communication. PDF, Office file, ZIP, JPG, or PNG; maximum 20 MB.</HelpText>
                 </Field>
               </Grid>
 
