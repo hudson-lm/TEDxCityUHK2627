@@ -586,7 +586,7 @@ export default function CommitteeRegistrationPage() {
                     autoComplete="email"
                     maxLength="254"
                     placeholder="name@my.cityu.edu.hk"
-                    pattern="[^@\\s]+@my\\.cityu\\.edu\\.hk"
+                    pattern="[^@\s]+@my\.cityu\.edu\.hk"
                     title="Use your CityUHK email address ending in @my.cityu.edu.hk"
                     required
                   />
