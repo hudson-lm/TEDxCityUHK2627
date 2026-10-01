@@ -29,6 +29,7 @@ const PORTFOLIO_MAX_SIZE = 20 * 1024 * 1024;
 const CV_ACCEPT = '.pdf,.doc,.docx';
 const PORTFOLIO_ACCEPT = '.pdf,.doc,.docx,.ppt,.pptx,.zip,.jpg,.jpeg,.png';
 const PORTFOLIO_REQUIRED_DEPARTMENTS = ['Creative', 'Marketing and Communication'];
+const CITYU_EMAIL_PATTERN = /^[^\s@]+@my\.cityu\.edu\.hk$/i;
 
 const Page = styled.main`
   min-height: 100vh;
@@ -442,6 +443,9 @@ const friendlyError = (error = '') => {
   if (normalized.includes('committee_registrations_email_address_key') || normalized.includes('duplicate key')) {
     return 'An application has already been submitted with this email address.';
   }
+  if (normalized.includes('committee_registrations_email_address_check')) {
+    return 'Please use your CityUHK email address ending in @my.cityu.edu.hk.';
+  }
   if (normalized.includes('fetch') || normalized.includes('network')) {
     return 'We could not reach the registration service. Check your connection and try again.';
   }
@@ -488,6 +492,11 @@ export default function CommitteeRegistrationPage() {
 
     if (form.secondChoice && form.firstChoice === form.secondChoice) {
       setMessage('Please select two different department preferences.');
+      return;
+    }
+
+    if (!CITYU_EMAIL_PATTERN.test(form.email.trim())) {
+      setMessage('Please use your CityUHK email address ending in @my.cityu.edu.hk.');
       return;
     }
 
@@ -568,7 +577,19 @@ export default function CommitteeRegistrationPage() {
                 </Field>
                 <Field>
                   <Label htmlFor="email">CityUHK email *</Label>
-                  <Input id="email" name="email" type="email" value={form.email} onChange={handleChange} autoComplete="email" maxLength="254" placeholder="name@my.cityu.edu.hk" required />
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    autoComplete="email"
+                    maxLength="254"
+                    placeholder="name@my.cityu.edu.hk"
+                    pattern="[^@\\s]+@my\\.cityu\\.edu\\.hk"
+                    title="Use your CityUHK email address ending in @my.cityu.edu.hk"
+                    required
+                  />
                 </Field>
                 <Field>
                   <Label htmlFor="phone">Phone number *</Label>
