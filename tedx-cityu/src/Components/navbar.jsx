@@ -163,7 +163,6 @@ export default function Navbar() {
                 className="text-black mx-6 text-base md:text-lg hover:text-yellow-400"
                 key={index}
                 to={selection.url}
-                activeClassName="active"
               >
                 {selection.label}
               </Selection>
@@ -177,7 +176,6 @@ export default function Navbar() {
             <Selection
               key={index}
               to={selection.url}
-              activeClassName="active"
               className="my-2 md:text-2xl text-xl text-black text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
