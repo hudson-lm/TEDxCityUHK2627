@@ -160,7 +160,13 @@ export const Banner = ({text1,text2, show=true}) =>{
             {!show && <BannerWrapper2 ref={bannerRef}>
                 <SlideInContainer className={isVisible ? 'slide-in' : ''}>
                     <ImageContainer>
-                        <img src={Background4} className="w-[80%] mb-10"/>
+                        <img
+                            src={Background4}
+                            alt="TEDxCityUHK Metamorphosis"
+                            className="w-[80%] mb-10"
+                            loading="lazy"
+                            decoding="async"
+                        />
                     </ImageContainer>
                     <Container>
                         <TitleContainer>

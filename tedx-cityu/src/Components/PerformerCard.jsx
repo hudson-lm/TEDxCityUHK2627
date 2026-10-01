@@ -45,6 +45,8 @@ export default function PerformerCard() {
             <Image
               src={require("../Assets/Members/Performer/" + item.img)}
               alt={item.fname}
+              loading="lazy"
+              decoding="async"
             />
             <div className="text-center font-textfont font-bold text-xl md:text-2xl py-4 text-white bg-black">
               {item.fname}

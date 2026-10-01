@@ -67,6 +67,8 @@ export default function SponsorCard() {
                     src={require("../Assets/Sponsor/" + item.img)}
                     alt={item.name}
                     className="rounded-md"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </Card>
               </Link>

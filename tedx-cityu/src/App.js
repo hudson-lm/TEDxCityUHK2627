@@ -1,19 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import styled from "styled-components";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom"; // Tambah useLocation
-import TeamPage from "./Pages/teampage";
-import HomePage from "./Pages/homepage";
-import PastEventPage from "./Pages/pasteventpage";
 import Navbar from "./Components/navbar";
 import Footer from "./Components/footer";
-import SpeakerPage from "./Pages/Speakerpage";
-import PerformerPage from "./Pages/Performerpage";
-import AboutTedx from "./Components/aboutTedx";
-import RegistrationPage from "./Pages/registrationpage";
-import CommitteeRegistrationPage from "./Pages/committeeRegistrationPage";
+
+const HomePage = lazy(() => import("./Pages/homepage"));
+const AboutTedx = lazy(() => import("./Components/aboutTedx"));
+const TeamPage = lazy(() => import("./Pages/teampage"));
+const PastEventPage = lazy(() => import("./Pages/pasteventpage"));
+const RegistrationPage = lazy(() => import("./Pages/registrationpage"));
+const CommitteeRegistrationPage = lazy(() => import("./Pages/committeeRegistrationPage"));
+const SpeakerPage = lazy(() => import("./Pages/Speakerpage"));
 
 const Container = styled.div`
   overflow-x: hidden;
+`;
+
+const RouteLoading = styled.div`
+  min-height: 55vh;
+  display: grid;
+  place-items: center;
+  color: #8e1730;
+  background: #f7f2e9;
+  font: 700 0.75rem 'Commissioner', sans-serif;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 `;
 
 function AppContent() {
@@ -39,15 +50,17 @@ function AppContent() {
   return (
     <Container>
       {isMobile ? <Navbar /> : isTablet ? <Navbar /> : <Navbar />}
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutTedx show={true} />} />
-        <Route path="/crew" element={<TeamPage isMobile={isMobile} isTablet={isTablet} />} />
-        <Route path="/pastevent" element={<PastEventPage />} />
-        <Route path="/registration" element={<RegistrationPage />} />
-        <Route path="/committee-registration" element={<CommitteeRegistrationPage />} />
-        <Route path="/speaker/:path" element={<SpeakerPage />} />
-      </Routes>
+      <Suspense fallback={<RouteLoading>Preparing the stage…</RouteLoading>}>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutTedx show={true} />} />
+          <Route path="/crew" element={<TeamPage isMobile={isMobile} isTablet={isTablet} />} />
+          <Route path="/pastevent" element={<PastEventPage />} />
+          <Route path="/registration" element={<RegistrationPage />} />
+          <Route path="/committee-registration" element={<CommitteeRegistrationPage />} />
+          <Route path="/speaker/:path" element={<SpeakerPage />} />
+        </Routes>
+      </Suspense>
       {!isAboutPage && <Footer />}
     </Container>
   );

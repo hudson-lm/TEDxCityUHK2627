@@ -17,7 +17,12 @@ const Image = styled.img`
 export default function PastEventPage() {
   return (
     <Container>
-      <Image src={PastEventsImage} alt="TEDx Past Events" />
+      <Image
+        src={PastEventsImage}
+        alt="TEDx Past Events"
+        decoding="async"
+        fetchPriority="high"
+      />
     </Container>
   );
 }

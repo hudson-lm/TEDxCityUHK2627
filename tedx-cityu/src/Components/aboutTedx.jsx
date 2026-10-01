@@ -1051,13 +1051,23 @@ export default function AboutTedx({ show = true }) {
         <TopSection>
           <LeftPanel>
             <StackedImage>
-              <ImageWithOverlay src={p1} alt="Image Title 1" />
+              <ImageWithOverlay
+                src={p1}
+                alt="Image Title 1"
+                loading="lazy"
+                decoding="async"
+              />
               <ImageTextOverlay2>
                 <span className="about-part">WHY NOT LEARN </span>
               </ImageTextOverlay2>
             </StackedImage>
             <StackedImage2>
-              <ImageWithOverlay src={p2} alt="Image Title 2" />
+              <ImageWithOverlay
+                src={p2}
+                alt="Image Title 2"
+                loading="lazy"
+                decoding="async"
+              />
               <ImageTextOverlay>
                 <span className="about-part">ABOUT</span>
                 <span className="tedx-part">TEDX</span>
@@ -1077,6 +1087,8 @@ export default function AboutTedx({ show = true }) {
                 src={p5}
                 alt="TEDx Event"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                loading="lazy"
+                decoding="async"
               />
             </Monitor>
           </MonitorPanel>

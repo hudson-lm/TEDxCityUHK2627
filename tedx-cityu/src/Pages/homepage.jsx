@@ -173,6 +173,8 @@ function PamphletViewer({
           <img 
             src={previewUrl} 
             alt="TEDxCityUHK2026 Event Pamphlet Preview"
+            loading="lazy"
+            decoding="async"
           />
         </ScrollablePreview>
       </PamphletCard>
@@ -201,6 +203,8 @@ export default function HomePage() {
                     src={Event_details}
                     alt="TEDx CityUHK Hero"
                     className="w-full h-auto max-w-none object-contain"
+                    loading="lazy"
+                    decoding="async"
                 />
             </div>
 
@@ -242,7 +246,13 @@ export default function HomePage() {
             {/* Original SponsorCard and team image – keep as they were */}
             <SponsorCard />
             <div className="w-full">
-                <img src={TEDxTeam} alt="TEDx CityUHK Team" className="w-full h-auto" />
+                <img
+                    src={TEDxTeam}
+                    alt="TEDx CityUHK Team"
+                    className="w-full h-auto"
+                    loading="lazy"
+                    decoding="async"
+                />
             </div>
             <div className="w-full flex justify-end pr-4 sm:pr-6 md:pr-8 lg:pr-10 pb-4 sm:pb-6 md:pb-8 lg:pb-10">
                 <button onClick={() => navigate('/about')} className="bg-black border-4 border-white text-white px-6 py-3 sm:px-8 sm:py-4 md:px-12 md:py-6 lg:px-12 lg:py-6 text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl font-bold hover:bg-white hover:text-black transition-colors duration-300">

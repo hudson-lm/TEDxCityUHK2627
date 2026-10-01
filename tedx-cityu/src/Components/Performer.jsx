@@ -31,6 +31,8 @@ const Performer = ({data}) =>{
                         src={require("../Assets/Members/Performer/" + item.img)}
                         alt={item.fname}
                         className="object-scale-down w-48 h-48 md:ml-36 mb-5 md:mb-auto mt-10 md:mt-auto md:my-auto rounded-md"
+                        loading="lazy"
+                        decoding="async"
                     />
                     <Wrapper className="flex flex-col items-center md:items-start">
                         <TitleText className="font-bold text-3xl md:my-0">

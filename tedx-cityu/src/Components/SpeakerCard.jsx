@@ -54,6 +54,8 @@ export default function SpeakerCard() {
                   alt={item.fname}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
                   style={getImageStyle(item.img)}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <SpeakerName className="text-center text-md md:text-3xl mt-2 md:mt-5 md:mb-7 text-white">

@@ -79,7 +79,7 @@ return(
 <Container>
 
 <ImagePanel>
-<img src={img} alt={title}/>
+<img src={img} alt={title} loading="lazy" decoding="async"/>
 </ImagePanel>
 
 <ContentPanel>

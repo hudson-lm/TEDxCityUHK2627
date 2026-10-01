@@ -37,6 +37,8 @@ const Speaker = ({ data }) => {
               alt={item.fname}
               className="w-full h-auto object-cover rounded-md"
               style={{ maxHeight: "100%" }}
+              loading="lazy"
+              decoding="async"
             />
           </div>
           {/* Text column */}

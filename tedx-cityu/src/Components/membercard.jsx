@@ -95,7 +95,12 @@ const MemberCardInner = (
   return (
     <CardWrapper ref={ref} isExpanded={isExpanded} onClick={onClick}>
       <ImageShape isExpanded={isExpanded} deptColor={deptColor} cardRadius={cardRadius}>
-        <ProfileImg src={img} alt={`${fname} ${lname}`} />
+        <ProfileImg
+          src={img}
+          alt={`${fname} ${lname}`}
+          loading="lazy"
+          decoding="async"
+        />
       </ImageShape>
 
       <InfoContainer isExpanded={isExpanded}>

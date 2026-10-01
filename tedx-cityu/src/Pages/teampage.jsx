@@ -818,13 +818,23 @@ export default function TeamPage() {
             <TopSection>
                 <LeftPanel>
                     <StackedImage>
-                    <ImageWithOverlay src={pp1} alt="Image Title 1" />
+                    <ImageWithOverlay
+                        src={pp1}
+                        alt="Image Title 1"
+                        loading="lazy"
+                        decoding="async"
+                    />
                     <ImageTextOverlay2>
                         <span className="about-part">WHY NOT LEARN </span>
                     </ImageTextOverlay2>
                     </StackedImage>
                     <StackedImage2>
-                    <ImageWithOverlay src={pp2} alt="Image Title 2" />
+                    <ImageWithOverlay
+                        src={pp2}
+                        alt="Image Title 2"
+                        loading="lazy"
+                        decoding="async"
+                    />
                     <ImageTextOverlay>
                         <span className="about-part">ABOUT</span>
                         <span className="tedx-part">Our Crew</span>
