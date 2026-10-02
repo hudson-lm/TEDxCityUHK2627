@@ -109,18 +109,12 @@ export const submitCommitteeApplication = async (applicationData) => {
     const requiresPortfolio = PORTFOLIO_REQUIRED_DEPARTMENTS.includes(applicationData.firstChoice)
       || PORTFOLIO_REQUIRED_DEPARTMENTS.includes(applicationData.secondChoice);
 
-    if (requiresPortfolio && !applicationData.portfolioFile) {
+    if (requiresPortfolio && !applicationData.portfolioLink?.trim()) {
       throw new Error('Portfolio is required for Creative and Marketing and Communication applicants.');
     }
 
     const applicationId = createApplicationId();
     const cvStoragePath = await uploadApplicationFile(applicationId, 'cv', applicationData.cvFile);
-    const portfolioStoragePath = await uploadApplicationFile(
-      applicationId,
-      'portfolio',
-      applicationData.portfolioFile,
-    );
-
     const { error } = await supabase
       .from('committee_registrations')
       .insert([
@@ -137,7 +131,7 @@ export const submitCommitteeApplication = async (applicationData) => {
           second_choice: applicationData.secondChoice || null,
           motivation: applicationData.motivation.trim(),
           cv_storage_path: cvStoragePath,
-          portfolio_storage_path: portfolioStoragePath,
+          portfolio_storage_path: applicationData.portfolioLink.trim() || null,
           availability_acknowledged: applicationData.availabilityAcknowledged,
         },
       ]);

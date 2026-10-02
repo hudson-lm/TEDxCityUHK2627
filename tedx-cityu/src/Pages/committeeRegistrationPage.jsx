@@ -25,9 +25,7 @@ const YEARS_OF_STUDY = [
 ];
 
 const CV_MAX_SIZE = 10 * 1024 * 1024;
-const PORTFOLIO_MAX_SIZE = 20 * 1024 * 1024;
 const CV_ACCEPT = '.pdf,.doc,.docx';
-const PORTFOLIO_ACCEPT = '.pdf,.doc,.docx,.ppt,.pptx,.zip,.jpg,.jpeg,.png';
 const PORTFOLIO_REQUIRED_DEPARTMENTS = ['Creative', 'Marketing and Communication'];
 const CITYU_EMAIL_PATTERN = /^[^\s@]+@my\.cityu\.edu\.hk$/i;
 
@@ -433,7 +431,7 @@ const initialForm = {
   secondChoice: '',
   motivation: '',
   cvFile: null,
-  portfolioFile: null,
+  portfolioLink: '',
   availabilityAcknowledged: false,
   privacyConsent: false,
 };
@@ -453,7 +451,7 @@ const friendlyError = (error = '') => {
     return 'Applications are not configured yet. Please contact the TEDxCityUHK team.';
   }
   if (normalized.includes('portfolio is required')) {
-    return 'Please attach a portfolio because Creative or Marketing & Communication is one of your department choices.';
+    return 'Please add a portfolio link because Creative or Marketing & Communication is one of your department choices.';
   }
   if (normalized.includes('file') || normalized.includes('storage') || normalized.includes('mime')) {
     return 'We could not upload one of your files. Check its format and size, then try again.';
@@ -500,13 +498,12 @@ export default function CommitteeRegistrationPage() {
       return;
     }
 
-    if (requiresPortfolio && !form.portfolioFile) {
-      setMessage('Please attach a portfolio because Creative or Marketing & Communication is one of your department choices.');
+    if (requiresPortfolio && !form.portfolioLink.trim()) {
+      setMessage('Please add a portfolio link because Creative or Marketing & Communication is one of your department choices.');
       return;
     }
 
-    const fileError = validateFile(form.cvFile, CV_MAX_SIZE, 'Your CV')
-      || validateFile(form.portfolioFile, PORTFOLIO_MAX_SIZE, 'Your portfolio');
+    const fileError = validateFile(form.cvFile, CV_MAX_SIZE, 'Your CV');
     if (fileError) {
       setMessage(fileError);
       return;
@@ -642,16 +639,18 @@ export default function CommitteeRegistrationPage() {
                   <HelpText>PDF, DOC, or DOCX; maximum 10 MB.</HelpText>
                 </Field>
                 <Field>
-                  <Label htmlFor="portfolioFile">Portfolio {requiresPortfolio ? '*' : ''}</Label>
-                  <FileInput
-                    id="portfolioFile"
-                    name="portfolioFile"
-                    type="file"
-                    accept={PORTFOLIO_ACCEPT}
+                  <Label htmlFor="portfolioLink">Portfolio link {requiresPortfolio ? '*' : ''}</Label>
+                  <Input
+                    id="portfolioLink"
+                    name="portfolioLink"
+                    type="url"
+                    value={form.portfolioLink}
                     onChange={handleChange}
+                    placeholder="https://"
+                    maxLength="1000"
                     required={requiresPortfolio}
                   />
-                  <HelpText>Required for Creative or Marketing &amp; Communication. PDF, Office file, ZIP, JPG, or PNG; maximum 20 MB.</HelpText>
+                  <HelpText>Required for Creative or Marketing &amp; Communication. Make sure reviewers can open the link.</HelpText>
                 </Field>
               </Grid>
 
