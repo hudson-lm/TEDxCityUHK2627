@@ -24,8 +24,6 @@ const YEARS_OF_STUDY = [
   'Other',
 ];
 
-const CV_MAX_SIZE = 10 * 1024 * 1024;
-const CV_ACCEPT = '.pdf,.doc,.docx';
 const PORTFOLIO_REQUIRED_DEPARTMENTS = ['Creative', 'Marketing and Communication'];
 const CITYU_EMAIL_PATTERN = /^[^\s@]+@my\.cityu\.edu\.hk$/i;
 
@@ -315,21 +313,6 @@ const HelpText = styled.p`
   line-height: 1.4;
 `;
 
-const FileInput = styled(Input)`
-  padding: 0.65rem;
-
-  &::file-selector-button {
-    margin-right: 0.8rem;
-    padding: 0.55rem 0.8rem;
-    color: #f8efdf;
-    background: #4b0c1b;
-    border: 0;
-    font: 600 0.82rem 'Commissioner', sans-serif;
-    letter-spacing: 0.04em;
-    cursor: pointer;
-  }
-`;
-
 const CheckboxLabel = styled.label`
   display: flex;
   gap: 0.8rem;
@@ -430,7 +413,7 @@ const initialForm = {
   firstChoice: '',
   secondChoice: '',
   motivation: '',
-  cvFile: null,
+  cvLink: '',
   portfolioLink: '',
   availabilityAcknowledged: false,
   privacyConsent: false,
@@ -459,13 +442,6 @@ const friendlyError = (error = '') => {
   return 'Your application could not be submitted right now. Please try again shortly.';
 };
 
-const validateFile = (file, maxSize, label) => {
-  if (file && file.size > maxSize) {
-    return `${label} must be smaller than ${maxSize / (1024 * 1024)} MB.`;
-  }
-  return '';
-};
-
 export default function CommitteeRegistrationPage() {
   const [form, setForm] = useState(initialForm);
   const [loading, setLoading] = useState(false);
@@ -479,8 +455,8 @@ export default function CommitteeRegistrationPage() {
   }, []);
 
   const handleChange = (event) => {
-    const { name, value, type, checked, files } = event.target;
-    const nextValue = type === 'checkbox' ? checked : type === 'file' ? files?.[0] || null : value;
+    const { name, value, type, checked } = event.target;
+    const nextValue = type === 'checkbox' ? checked : value;
     setForm((current) => ({ ...current, [name]: nextValue }));
   };
 
@@ -500,12 +476,6 @@ export default function CommitteeRegistrationPage() {
 
     if (requiresPortfolio && !form.portfolioLink.trim()) {
       setMessage('Please add a portfolio link because Creative or Marketing & Communication is one of your department choices.');
-      return;
-    }
-
-    const fileError = validateFile(form.cvFile, CV_MAX_SIZE, 'Your CV');
-    if (fileError) {
-      setMessage(fileError);
       return;
     }
 
@@ -634,9 +604,19 @@ export default function CommitteeRegistrationPage() {
 
               <Grid>
                 <Field>
-                  <Label htmlFor="cvFile">CV / résumé</Label>
-                  <FileInput id="cvFile" name="cvFile" type="file" accept={CV_ACCEPT} onChange={handleChange} />
-                  <HelpText>PDF, DOC, or DOCX; maximum 10 MB.</HelpText>
+                  <Label htmlFor="cvLink">CV / résumé link</Label>
+                  <Input
+                    id="cvLink"
+                    name="cvLink"
+                    type="url"
+                    value={form.cvLink}
+                    onChange={handleChange}
+                    placeholder="https://"
+                    maxLength="1000"
+                  />
+                  <HelpText>
+                    Name the file Name_FirstChoiceDivision (for example, Jessica_Creative) and make sure reviewers can open the link.
+                  </HelpText>
                 </Field>
                 <Field>
                   <Label htmlFor="portfolioLink">Portfolio link {requiresPortfolio ? '*' : ''}</Label>
@@ -650,7 +630,10 @@ export default function CommitteeRegistrationPage() {
                     maxLength="1000"
                     required={requiresPortfolio}
                   />
-                  <HelpText>Required for Creative or Marketing &amp; Communication. Make sure reviewers can open the link.</HelpText>
+                  <HelpText>
+                    Required for Creative or Marketing &amp; Communication. Name the file Name_FirstChoiceDivision (for example,
+                    Jessica_Creative) and make sure reviewers can open the link.
+                  </HelpText>
                 </Field>
               </Grid>
 

@@ -1,6 +1,5 @@
 import { supabase } from '../supabaseClient';
 
-const APPLICATION_FILES_BUCKET = 'committee-application-files';
 const PORTFOLIO_REQUIRED_DEPARTMENTS = ['Creative', 'Marketing and Communication'];
 
 const createApplicationId = () => {
@@ -13,33 +12,6 @@ const createApplicationId = () => {
     const value = character === 'x' ? randomValue : (randomValue & 0x3) | 0x8;
     return value.toString(16);
   });
-};
-
-const safeFileName = (name) => name
-  .normalize('NFKD')
-  .replace(/[^a-zA-Z0-9._-]+/g, '-')
-  .replace(/^-+|-+$/g, '')
-  .slice(-180) || 'file';
-
-const uploadApplicationFile = async (applicationId, fileType, file) => {
-  if (!file) {
-    return null;
-  }
-
-  const path = `${applicationId}/${fileType}-${safeFileName(file.name)}`;
-  const { error } = await supabase.storage
-    .from(APPLICATION_FILES_BUCKET)
-    .upload(path, file, {
-      cacheControl: '3600',
-      contentType: file.type || undefined,
-      upsert: false,
-    });
-
-  if (error) {
-    throw error;
-  }
-
-  return path;
 };
 
 const missingConfigurationResult = () => ({
@@ -114,7 +86,6 @@ export const submitCommitteeApplication = async (applicationData) => {
     }
 
     const applicationId = createApplicationId();
-    const cvStoragePath = await uploadApplicationFile(applicationId, 'cv', applicationData.cvFile);
     const { error } = await supabase
       .from('committee_registrations')
       .insert([
@@ -130,7 +101,7 @@ export const submitCommitteeApplication = async (applicationData) => {
           first_choice: applicationData.firstChoice,
           second_choice: applicationData.secondChoice || null,
           motivation: applicationData.motivation.trim(),
-          cv_storage_path: cvStoragePath,
+          cv_storage_path: applicationData.cvLink.trim() || null,
           portfolio_storage_path: applicationData.portfolioLink.trim() || null,
           availability_acknowledged: applicationData.availabilityAcknowledged,
         },
