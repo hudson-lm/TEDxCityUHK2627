@@ -1,0 +1,1778 @@
+{
+  "assets": {
+    "About/p1.png": {
+      "source": "About/p1.png",
+      "sourceWidth": 2248,
+      "sourceHeight": 1613,
+      "sourceBytes": 4737262,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p1-sm.webp",
+          "width": 640,
+          "height": 459,
+          "bytes": 50834
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p1-lg.webp",
+          "width": 1400,
+          "height": 1005,
+          "bytes": 139570
+        }
+      }
+    },
+    "About/p2.png": {
+      "source": "About/p2.png",
+      "sourceWidth": 2244,
+      "sourceHeight": 1614,
+      "sourceBytes": 4701104,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p2-sm.webp",
+          "width": 640,
+          "height": 460,
+          "bytes": 64378
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p2-lg.webp",
+          "width": 1400,
+          "height": 1007,
+          "bytes": 183514
+        }
+      }
+    },
+    "About/p3.png": {
+      "source": "About/p3.png",
+      "sourceWidth": 2682,
+      "sourceHeight": 1618,
+      "sourceBytes": 5077926,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p3-sm.webp",
+          "width": 640,
+          "height": 386,
+          "bytes": 65146
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p3-lg.webp",
+          "width": 1400,
+          "height": 845,
+          "bytes": 183728
+        }
+      }
+    },
+    "About/p4.png": {
+      "source": "About/p4.png",
+      "sourceWidth": 1950,
+      "sourceHeight": 1615,
+      "sourceBytes": 4757248,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p4-sm.webp",
+          "width": 640,
+          "height": 530,
+          "bytes": 70102
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p4-lg.webp",
+          "width": 1400,
+          "height": 1159,
+          "bytes": 216000
+        }
+      }
+    },
+    "About/p5.png": {
+      "source": "About/p5.png",
+      "sourceWidth": 1421,
+      "sourceHeight": 1612,
+      "sourceBytes": 3037159,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p5-sm.webp",
+          "width": 640,
+          "height": 726,
+          "bytes": 77030
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p5-lg.webp",
+          "width": 1400,
+          "height": 1588,
+          "bytes": 198302
+        }
+      }
+    },
+    "About/p6.png": {
+      "source": "About/p6.png",
+      "sourceWidth": 857,
+      "sourceHeight": 1613,
+      "sourceBytes": 2252529,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p6-sm.webp",
+          "width": 640,
+          "height": 1205,
+          "bytes": 144348
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p6-lg.webp",
+          "width": 857,
+          "height": 1613,
+          "bytes": 214892
+        }
+      }
+    },
+    "About/p7.png": {
+      "source": "About/p7.png",
+      "sourceWidth": 1956,
+      "sourceHeight": 1619,
+      "sourceBytes": 3940507,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p7-sm.webp",
+          "width": 640,
+          "height": 530,
+          "bytes": 70940
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p7-lg.webp",
+          "width": 1400,
+          "height": 1159,
+          "bytes": 178148
+        }
+      }
+    },
+    "About/p8.png": {
+      "source": "About/p8.png",
+      "sourceWidth": 1621,
+      "sourceHeight": 1614,
+      "sourceBytes": 2758807,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/About/p8-sm.webp",
+          "width": 640,
+          "height": 637,
+          "bytes": 58466
+        },
+        "lg": {
+          "path": "AssetsOptimized/About/p8-lg.webp",
+          "width": 1400,
+          "height": 1394,
+          "bytes": 144382
+        }
+      }
+    },
+    "Artpiece.png": {
+      "source": "Artpiece.png",
+      "sourceWidth": 3624,
+      "sourceHeight": 3120,
+      "sourceBytes": 4268985,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Artpiece-sm.webp",
+          "width": 640,
+          "height": 551,
+          "bytes": 38206
+        },
+        "lg": {
+          "path": "AssetsOptimized/Artpiece-lg.webp",
+          "width": 1400,
+          "height": 1205,
+          "bytes": 116812
+        }
+      }
+    },
+    "background1.png": {
+      "source": "background1.png",
+      "sourceWidth": 1089,
+      "sourceHeight": 528,
+      "sourceBytes": 898579,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/background1-sm.webp",
+          "width": 768,
+          "height": 372,
+          "bytes": 40238
+        },
+        "lg": {
+          "path": "AssetsOptimized/background1-lg.webp",
+          "width": 1089,
+          "height": 528,
+          "bytes": 60560
+        }
+      }
+    },
+    "background2.png": {
+      "source": "background2.png",
+      "sourceWidth": 1090,
+      "sourceHeight": 454,
+      "sourceBytes": 730507,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/background2-sm.webp",
+          "width": 768,
+          "height": 320,
+          "bytes": 34810
+        },
+        "lg": {
+          "path": "AssetsOptimized/background2-lg.webp",
+          "width": 1090,
+          "height": 454,
+          "bytes": 53982
+        }
+      }
+    },
+    "background3.JPG": {
+      "source": "background3.JPG",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "sourceBytes": 7274496,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/background3-sm.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 56212
+        },
+        "lg": {
+          "path": "AssetsOptimized/background3-lg.webp",
+          "width": 1920,
+          "height": 1280,
+          "bytes": 244502
+        }
+      }
+    },
+    "Event_details.png": {
+      "source": "Event_details.png",
+      "sourceWidth": 6750,
+      "sourceHeight": 10250,
+      "sourceBytes": 5898999,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Event_details-sm.webp",
+          "width": 720,
+          "height": 1093,
+          "bytes": 185266
+        },
+        "lg": {
+          "path": "AssetsOptimized/Event_details-lg.webp",
+          "width": 1600,
+          "height": 2430,
+          "bytes": 573326
+        }
+      }
+    },
+    "Homepage-Photo.png": {
+      "source": "Homepage-Photo.png",
+      "sourceWidth": 599,
+      "sourceHeight": 399,
+      "sourceBytes": 475306,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Homepage-Photo-sm.webp",
+          "width": 599,
+          "height": 399,
+          "bytes": 57900
+        },
+        "lg": {
+          "path": "AssetsOptimized/Homepage-Photo-lg.webp",
+          "width": 599,
+          "height": 399,
+          "bytes": 57900
+        }
+      }
+    },
+    "logo-black.png": {
+      "source": "logo-black.png",
+      "sourceWidth": 1970,
+      "sourceHeight": 440,
+      "sourceBytes": 49273,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/logo-black-sm.webp",
+          "width": 640,
+          "height": 143,
+          "bytes": 8978
+        },
+        "lg": {
+          "path": "AssetsOptimized/logo-black-lg.webp",
+          "width": 1400,
+          "height": 313,
+          "bytes": 18722
+        }
+      }
+    },
+    "logo-white.png": {
+      "source": "logo-white.png",
+      "sourceWidth": 1970,
+      "sourceHeight": 440,
+      "sourceBytes": 51207,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/logo-white-sm.webp",
+          "width": 640,
+          "height": 143,
+          "bytes": 13844
+        },
+        "lg": {
+          "path": "AssetsOptimized/logo-white-lg.webp",
+          "width": 1400,
+          "height": 313,
+          "bytes": 27786
+        }
+      }
+    },
+    "Members/Creative/Clancy Clarence Natania.jpeg": {
+      "source": "Members/Creative/Clancy Clarence Natania.jpeg",
+      "sourceWidth": 3024,
+      "sourceHeight": 4032,
+      "sourceBytes": 4056969,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Creative/Clancy Clarence Natania-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 35828
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Creative/Clancy Clarence Natania-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 152690
+        }
+      }
+    },
+    "Members/Creative/Kezia Halim.jpg": {
+      "source": "Members/Creative/Kezia Halim.jpg",
+      "sourceWidth": 3120,
+      "sourceHeight": 4160,
+      "sourceBytes": 1312015,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Creative/Kezia Halim-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 55500
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Creative/Kezia Halim-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 154180
+        }
+      }
+    },
+    "Members/Creative/Prinxd.jpeg": {
+      "source": "Members/Creative/Prinxd.jpeg",
+      "sourceWidth": 4032,
+      "sourceHeight": 3024,
+      "sourceBytes": 3002984,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Creative/Prinxd-sm.webp",
+          "width": 400,
+          "height": 300,
+          "bytes": 28164
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Creative/Prinxd-lg.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 75466
+        }
+      }
+    },
+    "Members/Creative/Quenisha Yovela.jpeg": {
+      "source": "Members/Creative/Quenisha Yovela.jpeg",
+      "sourceWidth": 4280,
+      "sourceHeight": 5302,
+      "sourceBytes": 3735232,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Creative/Quenisha Yovela-sm.webp",
+          "width": 400,
+          "height": 496,
+          "bytes": 26620
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Creative/Quenisha Yovela-lg.webp",
+          "width": 800,
+          "height": 991,
+          "bytes": 68540
+        }
+      }
+    },
+    "Members/Creative/Rian Park.jpg": {
+      "source": "Members/Creative/Rian Park.jpg",
+      "sourceWidth": 1200,
+      "sourceHeight": 1600,
+      "sourceBytes": 754298,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Creative/Rian Park-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 19180
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Creative/Rian Park-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 59306
+        }
+      }
+    },
+    "Members/Curators/Hudson Lois.jpeg": {
+      "source": "Members/Curators/Hudson Lois.jpeg",
+      "sourceWidth": 3024,
+      "sourceHeight": 4032,
+      "sourceBytes": 671412,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Curators/Hudson Lois-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 30674
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Curators/Hudson Lois-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 68838
+        }
+      }
+    },
+    "Members/Curators/Jeslyne Kaori.jpeg": {
+      "source": "Members/Curators/Jeslyne Kaori.jpeg",
+      "sourceWidth": 4284,
+      "sourceHeight": 5712,
+      "sourceBytes": 1854223,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Curators/Jeslyne Kaori-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 33950
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Curators/Jeslyne Kaori-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 90534
+        }
+      }
+    },
+    "Members/Event Management/cemi backup 88.jpeg": {
+      "source": "Members/Event Management/cemi backup 88.jpeg",
+      "sourceWidth": 853,
+      "sourceHeight": 1280,
+      "sourceBytes": 55436,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Event Management/cemi backup 88-sm.webp",
+          "width": 400,
+          "height": 600,
+          "bytes": 10524
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Event Management/cemi backup 88-lg.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 29266
+        }
+      }
+    },
+    "Members/Event Management/Felice Pranata.jpeg": {
+      "source": "Members/Event Management/Felice Pranata.jpeg",
+      "sourceWidth": 4284,
+      "sourceHeight": 5712,
+      "sourceBytes": 2072258,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Event Management/Felice Pranata-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 35222
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Event Management/Felice Pranata-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 89658
+        }
+      }
+    },
+    "Members/Event Management/Fransiska Tabita.jpeg": {
+      "source": "Members/Event Management/Fransiska Tabita.jpeg",
+      "sourceWidth": 1212,
+      "sourceHeight": 1616,
+      "sourceBytes": 865293,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Event Management/Fransiska Tabita-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 70796
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Event Management/Fransiska Tabita-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 207806
+        }
+      }
+    },
+    "Members/Event Management/joanne.jpeg": {
+      "source": "Members/Event Management/joanne.jpeg",
+      "sourceWidth": 1536,
+      "sourceHeight": 2048,
+      "sourceBytes": 1052687,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Event Management/joanne-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 40728
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Event Management/joanne-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 119178
+        }
+      }
+    },
+    "Members/Event Management/Kaitlyn Wong.jpeg": {
+      "source": "Members/Event Management/Kaitlyn Wong.jpeg",
+      "sourceWidth": 1711,
+      "sourceHeight": 2281,
+      "sourceBytes": 729785,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Event Management/Kaitlyn Wong-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 29528
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Event Management/Kaitlyn Wong-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 85916
+        }
+      }
+    },
+    "Members/Event Management/Nicholas Lua.png": {
+      "source": "Members/Event Management/Nicholas Lua.png",
+      "sourceWidth": 1587,
+      "sourceHeight": 1649,
+      "sourceBytes": 1088535,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Event Management/Nicholas Lua-sm.webp",
+          "width": 400,
+          "height": 416,
+          "bytes": 12114
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Event Management/Nicholas Lua-lg.webp",
+          "width": 800,
+          "height": 831,
+          "bytes": 29526
+        }
+      }
+    },
+    "Members/Event Management/Saima.jpeg": {
+      "source": "Members/Event Management/Saima.jpeg",
+      "sourceWidth": 3024,
+      "sourceHeight": 4032,
+      "sourceBytes": 3803686,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Event Management/Saima-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 65460
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Event Management/Saima-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 197516
+        }
+      }
+    },
+    "Members/Finance and Sponsorship/Clarissa.jpeg": {
+      "source": "Members/Finance and Sponsorship/Clarissa.jpeg",
+      "sourceWidth": 2130,
+      "sourceHeight": 3195,
+      "sourceBytes": 2256306,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Clarissa-sm.webp",
+          "width": 400,
+          "height": 600,
+          "bytes": 45668
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Clarissa-lg.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 125276
+        }
+      }
+    },
+    "Members/Finance and Sponsorship/Flaudie.jpg": {
+      "source": "Members/Finance and Sponsorship/Flaudie.jpg",
+      "sourceWidth": 1600,
+      "sourceHeight": 1506,
+      "sourceBytes": 234016,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Flaudie-sm.webp",
+          "width": 400,
+          "height": 376,
+          "bytes": 22114
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Flaudie-lg.webp",
+          "width": 800,
+          "height": 753,
+          "bytes": 70110
+        }
+      }
+    },
+    "Members/Finance and Sponsorship/Mahekpreet KAUR.jpeg": {
+      "source": "Members/Finance and Sponsorship/Mahekpreet KAUR.jpeg",
+      "sourceWidth": 1114,
+      "sourceHeight": 1056,
+      "sourceBytes": 552509,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Mahekpreet KAUR-sm.webp",
+          "width": 400,
+          "height": 379,
+          "bytes": 26000
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Mahekpreet KAUR-lg.webp",
+          "width": 800,
+          "height": 758,
+          "bytes": 86642
+        }
+      }
+    },
+    "Members/Finance and Sponsorship/Rana Ahmed.jpeg": {
+      "source": "Members/Finance and Sponsorship/Rana Ahmed.jpeg",
+      "sourceWidth": 1284,
+      "sourceHeight": 2778,
+      "sourceBytes": 219270,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Rana Ahmed-sm.webp",
+          "width": 400,
+          "height": 865,
+          "bytes": 24834
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Finance and Sponsorship/Rana Ahmed-lg.webp",
+          "width": 800,
+          "height": 1731,
+          "bytes": 66338
+        }
+      }
+    },
+    "Members/Human Resources/Aileen Galih.jpeg": {
+      "source": "Members/Human Resources/Aileen Galih.jpeg",
+      "sourceWidth": 4284,
+      "sourceHeight": 5712,
+      "sourceBytes": 3489221,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Human Resources/Aileen Galih-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 24198
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Human Resources/Aileen Galih-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 76154
+        }
+      }
+    },
+    "Members/Human Resources/elycia trishelle.jpeg": {
+      "source": "Members/Human Resources/elycia trishelle.jpeg",
+      "sourceWidth": 2268,
+      "sourceHeight": 4032,
+      "sourceBytes": 3279359,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Human Resources/elycia trishelle-sm.webp",
+          "width": 400,
+          "height": 711,
+          "bytes": 62438
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Human Resources/elycia trishelle-lg.webp",
+          "width": 800,
+          "height": 1422,
+          "bytes": 225704
+        }
+      }
+    },
+    "Members/Human Resources/lance linus lee.jpg": {
+      "source": "Members/Human Resources/lance linus lee.jpg",
+      "sourceWidth": 433,
+      "sourceHeight": 577,
+      "sourceBytes": 20128,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Human Resources/lance linus lee-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 4950
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Human Resources/lance linus lee-lg.webp",
+          "width": 433,
+          "height": 577,
+          "bytes": 5576
+        }
+      }
+    },
+    "Members/Human Resources/Suha Islam.JPG": {
+      "source": "Members/Human Resources/Suha Islam.JPG",
+      "sourceWidth": 1175,
+      "sourceHeight": 1536,
+      "sourceBytes": 434472,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Human Resources/Suha Islam-sm.webp",
+          "width": 400,
+          "height": 523,
+          "bytes": 18162
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Human Resources/Suha Islam-lg.webp",
+          "width": 800,
+          "height": 1046,
+          "bytes": 66020
+        }
+      }
+    },
+    "Members/Human Resources/Thu Shoun Haythi Saing.jpeg": {
+      "source": "Members/Human Resources/Thu Shoun Haythi Saing.jpeg",
+      "sourceWidth": 1179,
+      "sourceHeight": 1977,
+      "sourceBytes": 1577780,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Human Resources/Thu Shoun Haythi Saing-sm.webp",
+          "width": 400,
+          "height": 671,
+          "bytes": 22956
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Human Resources/Thu Shoun Haythi Saing-lg.webp",
+          "width": 800,
+          "height": 1341,
+          "bytes": 74654
+        }
+      }
+    },
+    "Members/Human Resources/Yahan Zhang.jpeg": {
+      "source": "Members/Human Resources/Yahan Zhang.jpeg",
+      "sourceWidth": 2080,
+      "sourceHeight": 1560,
+      "sourceBytes": 902740,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Human Resources/Yahan Zhang-sm.webp",
+          "width": 400,
+          "height": 300,
+          "bytes": 13116
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Human Resources/Yahan Zhang-lg.webp",
+          "width": 800,
+          "height": 600,
+          "bytes": 38708
+        }
+      }
+    },
+    "Members/Marketing and Communication/Clayton Teo.jpg": {
+      "source": "Members/Marketing and Communication/Clayton Teo.jpg",
+      "sourceWidth": 2624,
+      "sourceHeight": 3936,
+      "sourceBytes": 5672295,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/Clayton Teo-sm.webp",
+          "width": 400,
+          "height": 600,
+          "bytes": 29462
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/Clayton Teo-lg.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 104334
+        }
+      }
+    },
+    "Members/Marketing and Communication/Dumi.jpeg": {
+      "source": "Members/Marketing and Communication/Dumi.jpeg",
+      "sourceWidth": 3024,
+      "sourceHeight": 4032,
+      "sourceBytes": 3325975,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/Dumi-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 35568
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/Dumi-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 104096
+        }
+      }
+    },
+    "Members/Marketing and Communication/Kennard G.I.jpg": {
+      "source": "Members/Marketing and Communication/Kennard G.I.jpg",
+      "sourceWidth": 1200,
+      "sourceHeight": 1600,
+      "sourceBytes": 158150,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/Kennard G.I-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 20200
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/Kennard G.I-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 52424
+        }
+      }
+    },
+    "Members/Marketing and Communication/lindsay.jpg": {
+      "source": "Members/Marketing and Communication/lindsay.jpg",
+      "sourceWidth": 900,
+      "sourceHeight": 600,
+      "sourceBytes": 291367,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/lindsay-sm.webp",
+          "width": 400,
+          "height": 267,
+          "bytes": 13978
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/lindsay-lg.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 29888
+        }
+      }
+    },
+    "Members/Marketing and Communication/phoebe isabel.jpeg": {
+      "source": "Members/Marketing and Communication/phoebe isabel.jpeg",
+      "sourceWidth": 789,
+      "sourceHeight": 1052,
+      "sourceBytes": 349221,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/phoebe isabel-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 45764
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Marketing and Communication/phoebe isabel-lg.webp",
+          "width": 789,
+          "height": 1052,
+          "bytes": 125904
+        }
+      }
+    },
+    "Members/Performer/Benhill.jpg": {
+      "source": "Members/Performer/Benhill.jpg",
+      "sourceWidth": 3840,
+      "sourceHeight": 5120,
+      "sourceBytes": 2045212,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Performer/Benhill-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 48058
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Performer/Benhill-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 150514
+        }
+      }
+    },
+    "Members/Performer/CSSA_DANSO.jpeg": {
+      "source": "Members/Performer/CSSA_DANSO.jpeg",
+      "sourceWidth": 1600,
+      "sourceHeight": 1066,
+      "sourceBytes": 165257,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Performer/CSSA_DANSO-sm.webp",
+          "width": 400,
+          "height": 266,
+          "bytes": 19262
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Performer/CSSA_DANSO-lg.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 50650
+        }
+      }
+    },
+    "Members/Speaker/Darren_Po.jpeg": {
+      "source": "Members/Speaker/Darren_Po.jpeg",
+      "sourceWidth": 996,
+      "sourceHeight": 1328,
+      "sourceBytes": 211945,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker/Darren_Po-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 13602
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker/Darren_Po-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 29846
+        }
+      }
+    },
+    "Members/Speaker/Elin_Fu.jpg": {
+      "source": "Members/Speaker/Elin_Fu.jpg",
+      "sourceWidth": 3563,
+      "sourceHeight": 5345,
+      "sourceBytes": 9115426,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker/Elin_Fu-sm.webp",
+          "width": 400,
+          "height": 600,
+          "bytes": 9012
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker/Elin_Fu-lg.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 23682
+        }
+      }
+    },
+    "Members/Speaker/Emi_Wong.jpg": {
+      "source": "Members/Speaker/Emi_Wong.jpg",
+      "sourceWidth": 3648,
+      "sourceHeight": 5472,
+      "sourceBytes": 5993753,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker/Emi_Wong-sm.webp",
+          "width": 400,
+          "height": 600,
+          "bytes": 7248
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker/Emi_Wong-lg.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 18028
+        }
+      }
+    },
+    "Members/Speaker/Peta_Laverick.png": {
+      "source": "Members/Speaker/Peta_Laverick.png",
+      "sourceWidth": 1080,
+      "sourceHeight": 1350,
+      "sourceBytes": 1957450,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker/Peta_Laverick-sm.webp",
+          "width": 400,
+          "height": 500,
+          "bytes": 11100
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker/Peta_Laverick-lg.webp",
+          "width": 800,
+          "height": 1000,
+          "bytes": 26960
+        }
+      }
+    },
+    "Members/Speaker/Saanvi_Shukla.jpg": {
+      "source": "Members/Speaker/Saanvi_Shukla.jpg",
+      "sourceWidth": 1290,
+      "sourceHeight": 1951,
+      "sourceBytes": 319643,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker/Saanvi_Shukla-sm.webp",
+          "width": 400,
+          "height": 605,
+          "bytes": 13608
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker/Saanvi_Shukla-lg.webp",
+          "width": 800,
+          "height": 1210,
+          "bytes": 31446
+        }
+      }
+    },
+    "Members/Speaker/William_Lee.jpeg": {
+      "source": "Members/Speaker/William_Lee.jpeg",
+      "sourceWidth": 1440,
+      "sourceHeight": 1680,
+      "sourceBytes": 1024999,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker/William_Lee-sm.webp",
+          "width": 400,
+          "height": 467,
+          "bytes": 18292
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker/William_Lee-lg.webp",
+          "width": 800,
+          "height": 933,
+          "bytes": 53074
+        }
+      }
+    },
+    "Members/Speaker Relations/Adryan Tan.jpeg": {
+      "source": "Members/Speaker Relations/Adryan Tan.jpeg",
+      "sourceWidth": 3803,
+      "sourceHeight": 5704,
+      "sourceBytes": 9649222,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Adryan Tan-sm.webp",
+          "width": 400,
+          "height": 600,
+          "bytes": 11174
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Adryan Tan-lg.webp",
+          "width": 800,
+          "height": 1200,
+          "bytes": 35524
+        }
+      }
+    },
+    "Members/Speaker Relations/Anice Darlene.jpeg": {
+      "source": "Members/Speaker Relations/Anice Darlene.jpeg",
+      "sourceWidth": 1275,
+      "sourceHeight": 1282,
+      "sourceBytes": 115445,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Anice Darlene-sm.webp",
+          "width": 400,
+          "height": 402,
+          "bytes": 10904
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Anice Darlene-lg.webp",
+          "width": 800,
+          "height": 804,
+          "bytes": 33188
+        }
+      }
+    },
+    "Members/Speaker Relations/Ni Shang.jpeg": {
+      "source": "Members/Speaker Relations/Ni Shang.jpeg",
+      "sourceWidth": 1179,
+      "sourceHeight": 1566,
+      "sourceBytes": 1129905,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Ni Shang-sm.webp",
+          "width": 400,
+          "height": 531,
+          "bytes": 19818
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Ni Shang-lg.webp",
+          "width": 800,
+          "height": 1063,
+          "bytes": 41136
+        }
+      }
+    },
+    "Members/Speaker Relations/nightt.jpeg": {
+      "source": "Members/Speaker Relations/nightt.jpeg",
+      "sourceWidth": 2316,
+      "sourceHeight": 3088,
+      "sourceBytes": 1699104,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker Relations/nightt-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 28262
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker Relations/nightt-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 78872
+        }
+      }
+    },
+    "Members/Speaker Relations/Ruth Joelin.jpeg": {
+      "source": "Members/Speaker Relations/Ruth Joelin.jpeg",
+      "sourceWidth": 3024,
+      "sourceHeight": 4032,
+      "sourceBytes": 2452093,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Ruth Joelin-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 38928
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Speaker Relations/Ruth Joelin-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 95416
+        }
+      }
+    },
+    "Members/Technical/Arista Wangsadjaja.jpeg": {
+      "source": "Members/Technical/Arista Wangsadjaja.jpeg",
+      "sourceWidth": 937,
+      "sourceHeight": 976,
+      "sourceBytes": 116552,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Technical/Arista Wangsadjaja-sm.webp",
+          "width": 400,
+          "height": 417,
+          "bytes": 13240
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Technical/Arista Wangsadjaja-lg.webp",
+          "width": 800,
+          "height": 833,
+          "bytes": 31574
+        }
+      }
+    },
+    "Members/Technical/Joseph Andrei Wong.jpeg": {
+      "source": "Members/Technical/Joseph Andrei Wong.jpeg",
+      "sourceWidth": 897,
+      "sourceHeight": 1699,
+      "sourceBytes": 260774,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Technical/Joseph Andrei Wong-sm.webp",
+          "width": 400,
+          "height": 758,
+          "bytes": 30354
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Technical/Joseph Andrei Wong-lg.webp",
+          "width": 800,
+          "height": 1515,
+          "bytes": 75908
+        }
+      }
+    },
+    "Members/Technical/King Lam.jpg": {
+      "source": "Members/Technical/King Lam.jpg",
+      "sourceWidth": 2304,
+      "sourceHeight": 2056,
+      "sourceBytes": 2183995,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Technical/King Lam-sm.webp",
+          "width": 400,
+          "height": 357,
+          "bytes": 18470
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Technical/King Lam-lg.webp",
+          "width": 800,
+          "height": 714,
+          "bytes": 83860
+        }
+      }
+    },
+    "Members/Technical/Sasina Parinkarn.png": {
+      "source": "Members/Technical/Sasina Parinkarn.png",
+      "sourceWidth": 1020,
+      "sourceHeight": 1020,
+      "sourceBytes": 1670026,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Technical/Sasina Parinkarn-sm.webp",
+          "width": 400,
+          "height": 400,
+          "bytes": 28232
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Technical/Sasina Parinkarn-lg.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 66982
+        }
+      }
+    },
+    "Members/Technical/Steven Sie Santosa.jpeg": {
+      "source": "Members/Technical/Steven Sie Santosa.jpeg",
+      "sourceWidth": 3024,
+      "sourceHeight": 4032,
+      "sourceBytes": 1938015,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Members/Technical/Steven Sie Santosa-sm.webp",
+          "width": 400,
+          "height": 533,
+          "bytes": 31482
+        },
+        "lg": {
+          "path": "AssetsOptimized/Members/Technical/Steven Sie Santosa-lg.webp",
+          "width": 800,
+          "height": 1067,
+          "bytes": 94286
+        }
+      }
+    },
+    "MetamorphosisLogo.png": {
+      "source": "MetamorphosisLogo.png",
+      "sourceWidth": 528,
+      "sourceHeight": 528,
+      "sourceBytes": 175995,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/MetamorphosisLogo-sm.webp",
+          "width": 528,
+          "height": 528,
+          "bytes": 76556
+        },
+        "lg": {
+          "path": "AssetsOptimized/MetamorphosisLogo-lg.webp",
+          "width": 528,
+          "height": 528,
+          "bytes": 76556
+        }
+      }
+    },
+    "MetamorphosisLogo2.png": {
+      "source": "MetamorphosisLogo2.png",
+      "sourceWidth": 541,
+      "sourceHeight": 494,
+      "sourceBytes": 204271,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/MetamorphosisLogo2-sm.webp",
+          "width": 541,
+          "height": 494,
+          "bytes": 53836
+        },
+        "lg": {
+          "path": "AssetsOptimized/MetamorphosisLogo2-lg.webp",
+          "width": 541,
+          "height": 494,
+          "bytes": 53836
+        }
+      }
+    },
+    "pamphlet.png": {
+      "source": "pamphlet.png",
+      "sourceWidth": 1518,
+      "sourceHeight": 8000,
+      "sourceBytes": 1102009,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/pamphlet-sm.webp",
+          "width": 720,
+          "height": 3794,
+          "bytes": 547788
+        },
+        "lg": {
+          "path": "AssetsOptimized/pamphlet-lg.webp",
+          "width": 1200,
+          "height": 6324,
+          "bytes": 1228702
+        }
+      }
+    },
+    "PastEvent.png": {
+      "source": "PastEvent.png",
+      "sourceWidth": 786,
+      "sourceHeight": 239,
+      "sourceBytes": 282731,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/PastEvent-sm.webp",
+          "width": 640,
+          "height": 195,
+          "bytes": 22108
+        },
+        "lg": {
+          "path": "AssetsOptimized/PastEvent-lg.webp",
+          "width": 786,
+          "height": 239,
+          "bytes": 29112
+        }
+      }
+    },
+    "PastEvents/TEDx Website Design.png": {
+      "source": "PastEvents/TEDx Website Design.png",
+      "sourceWidth": 3122,
+      "sourceHeight": 23156,
+      "sourceBytes": 19784870,
+      "tiles": [
+        {
+          "index": 1,
+          "variants": {
+            "sm": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-01-sm.webp",
+              "width": 720,
+              "height": 900,
+              "bytes": 133092
+            },
+            "lg": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-01-lg.webp",
+              "width": 1600,
+              "height": 2000,
+              "bytes": 337368
+            }
+          }
+        },
+        {
+          "index": 2,
+          "variants": {
+            "sm": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-02-sm.webp",
+              "width": 720,
+              "height": 900,
+              "bytes": 77404
+            },
+            "lg": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-02-lg.webp",
+              "width": 1600,
+              "height": 2000,
+              "bytes": 189068
+            }
+          }
+        },
+        {
+          "index": 3,
+          "variants": {
+            "sm": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-03-sm.webp",
+              "width": 720,
+              "height": 900,
+              "bytes": 80492
+            },
+            "lg": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-03-lg.webp",
+              "width": 1600,
+              "height": 2000,
+              "bytes": 199968
+            }
+          }
+        },
+        {
+          "index": 4,
+          "variants": {
+            "sm": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-04-sm.webp",
+              "width": 720,
+              "height": 900,
+              "bytes": 85134
+            },
+            "lg": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-04-lg.webp",
+              "width": 1600,
+              "height": 2000,
+              "bytes": 211020
+            }
+          }
+        },
+        {
+          "index": 5,
+          "variants": {
+            "sm": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-05-sm.webp",
+              "width": 720,
+              "height": 900,
+              "bytes": 75600
+            },
+            "lg": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-05-lg.webp",
+              "width": 1600,
+              "height": 2000,
+              "bytes": 191058
+            }
+          }
+        },
+        {
+          "index": 6,
+          "variants": {
+            "sm": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-06-sm.webp",
+              "width": 720,
+              "height": 841,
+              "bytes": 68344
+            },
+            "lg": {
+              "path": "AssetsOptimized/PastEvents/TEDx Website Design-06-lg.webp",
+              "width": 1600,
+              "height": 1869,
+              "bytes": 147312
+            }
+          }
+        }
+      ]
+    },
+    "Pastspeaker.png": {
+      "source": "Pastspeaker.png",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "sourceBytes": 14706577,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Pastspeaker-sm.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 22446
+        },
+        "lg": {
+          "path": "AssetsOptimized/Pastspeaker-lg.webp",
+          "width": 1400,
+          "height": 933,
+          "bytes": 62618
+        }
+      }
+    },
+    "ReadMoreText.png": {
+      "source": "ReadMoreText.png",
+      "sourceWidth": 193,
+      "sourceHeight": 53,
+      "sourceBytes": 1512,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/ReadMoreText-sm.webp",
+          "width": 193,
+          "height": 53,
+          "bytes": 1886
+        },
+        "lg": {
+          "path": "AssetsOptimized/ReadMoreText-lg.webp",
+          "width": 193,
+          "height": 53,
+          "bytes": 1886
+        }
+      }
+    },
+    "Sponsor/Indomie_Logo.png": {
+      "source": "Sponsor/Indomie_Logo.png",
+      "sourceWidth": 370,
+      "sourceHeight": 244,
+      "sourceBytes": 9669,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Sponsor/Indomie_Logo-sm.webp",
+          "width": 360,
+          "height": 237,
+          "bytes": 13012
+        },
+        "lg": {
+          "path": "AssetsOptimized/Sponsor/Indomie_Logo-lg.webp",
+          "width": 370,
+          "height": 244,
+          "bytes": 13382
+        }
+      }
+    },
+    "Sponsor/Locobike logo_with white-04.png": {
+      "source": "Sponsor/Locobike logo_with white-04.png",
+      "sourceWidth": 854,
+      "sourceHeight": 214,
+      "sourceBytes": 20723,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/Sponsor/Locobike logo_with white-04-sm.webp",
+          "width": 360,
+          "height": 90,
+          "bytes": 11974
+        },
+        "lg": {
+          "path": "AssetsOptimized/Sponsor/Locobike logo_with white-04-lg.webp",
+          "width": 720,
+          "height": 180,
+          "bytes": 24364
+        }
+      }
+    },
+    "TeamCrew/pp1.JPG": {
+      "source": "TeamCrew/pp1.JPG",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "sourceBytes": 4816896,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/TeamCrew/pp1-sm.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 15460
+        },
+        "lg": {
+          "path": "AssetsOptimized/TeamCrew/pp1-lg.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 41668
+        }
+      }
+    },
+    "TeamCrew/pp2.JPG": {
+      "source": "TeamCrew/pp2.JPG",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "sourceBytes": 5701632,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/TeamCrew/pp2-sm.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 32500
+        },
+        "lg": {
+          "path": "AssetsOptimized/TeamCrew/pp2-lg.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 83094
+        }
+      }
+    },
+    "TeamCrew/pp3.JPG": {
+      "source": "TeamCrew/pp3.JPG",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "sourceBytes": 4064523,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/TeamCrew/pp3-sm.webp",
+          "width": 768,
+          "height": 512,
+          "bytes": 46696
+        },
+        "lg": {
+          "path": "AssetsOptimized/TeamCrew/pp3-lg.webp",
+          "width": 1600,
+          "height": 1067,
+          "bytes": 132884
+        }
+      }
+    },
+    "TEDTeam.png": {
+      "source": "TEDTeam.png",
+      "sourceWidth": 6000,
+      "sourceHeight": 4000,
+      "sourceBytes": 15935584,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/TEDTeam-sm.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 18812
+        },
+        "lg": {
+          "path": "AssetsOptimized/TEDTeam-lg.webp",
+          "width": 1400,
+          "height": 933,
+          "bytes": 54376
+        }
+      }
+    },
+    "TEDxTeam.png": {
+      "source": "TEDxTeam.png",
+      "sourceWidth": 550,
+      "sourceHeight": 368,
+      "sourceBytes": 420502,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/TEDxTeam-sm.webp",
+          "width": 550,
+          "height": 368,
+          "bytes": 39190
+        },
+        "lg": {
+          "path": "AssetsOptimized/TEDxTeam-lg.webp",
+          "width": 550,
+          "height": 368,
+          "bytes": 39190
+        }
+      }
+    },
+    "TEDxTeam2025.png": {
+      "source": "TEDxTeam2025.png",
+      "sourceWidth": 5120,
+      "sourceHeight": 4000,
+      "sourceBytes": 21439720,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/TEDxTeam2025-sm.webp",
+          "width": 960,
+          "height": 750,
+          "bytes": 63636
+        },
+        "lg": {
+          "path": "AssetsOptimized/TEDxTeam2025-lg.webp",
+          "width": 1920,
+          "height": 1500,
+          "bytes": 159314
+        }
+      }
+    },
+    "X-FrameHome.png": {
+      "source": "X-FrameHome.png",
+      "sourceWidth": 279,
+      "sourceHeight": 88,
+      "sourceBytes": 1649,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/X-FrameHome-sm.webp",
+          "width": 279,
+          "height": 88,
+          "bytes": 1256
+        },
+        "lg": {
+          "path": "AssetsOptimized/X-FrameHome-lg.webp",
+          "width": 279,
+          "height": 88,
+          "bytes": 1256
+        }
+      }
+    }
+  },
+  "pastEventTiles": [
+    {
+      "index": 1,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-01-sm.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 133092
+        },
+        "lg": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-01-lg.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 337368
+        }
+      }
+    },
+    {
+      "index": 2,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-02-sm.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 77404
+        },
+        "lg": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-02-lg.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 189068
+        }
+      }
+    },
+    {
+      "index": 3,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-03-sm.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 80492
+        },
+        "lg": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-03-lg.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 199968
+        }
+      }
+    },
+    {
+      "index": 4,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-04-sm.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 85134
+        },
+        "lg": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-04-lg.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 211020
+        }
+      }
+    },
+    {
+      "index": 5,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-05-sm.webp",
+          "width": 720,
+          "height": 900,
+          "bytes": 75600
+        },
+        "lg": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-05-lg.webp",
+          "width": 1600,
+          "height": 2000,
+          "bytes": 191058
+        }
+      }
+    },
+    {
+      "index": 6,
+      "variants": {
+        "sm": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-06-sm.webp",
+          "width": 720,
+          "height": 841,
+          "bytes": 68344
+        },
+        "lg": {
+          "path": "AssetsOptimized/PastEvents/TEDx Website Design-06-lg.webp",
+          "width": 1600,
+          "height": 1869,
+          "bytes": 147312
+        }
+      }
+    }
+  ]
+}

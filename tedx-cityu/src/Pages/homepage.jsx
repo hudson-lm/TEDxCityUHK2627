@@ -3,10 +3,13 @@ import { useNavigate } from "react-router-dom";
 import SpeakerCard from "../Components/SpeakerCard";
 import PerformerCard from "../Components/PerformerCard";
 import SponsorCard from "../Components/SponsorCard";
-import TEDxTeam from "../Assets/TEDxTeam2025.png";
-import Event_details from "../Assets/Event_details.png";
+import TEDxTeamSmall from "../AssetsOptimized/TEDxTeam2025-sm.webp";
+import TEDxTeamLarge from "../AssetsOptimized/TEDxTeam2025-lg.webp";
+import EventDetailsSmall from "../AssetsOptimized/Event_details-sm.webp";
+import EventDetailsLarge from "../AssetsOptimized/Event_details-lg.webp";
 import pamphlet from "../Assets/pamphlet.pdf";
-import pamphletPreview from "../Assets/pamphlet.png";
+import pamphletPreviewSmall from "../AssetsOptimized/pamphlet-sm.webp";
+import pamphletPreviewLarge from "../AssetsOptimized/pamphlet-lg.webp";
 
 // ─── Animations ───
 const riseFromBottom = keyframes`
@@ -144,7 +147,8 @@ const DownloadIcon = () => (
 // ─── PamphletViewer (inline) ───
 function PamphletViewer({ 
   pamphletUrl, 
-  previewUrl = pamphletPreview,
+  previewUrl = pamphletPreviewLarge,
+  previewSmallUrl = pamphletPreviewSmall,
   downloadName = "TEDxCityUHK2026-pamphlet.pdf" 
 }) {
   const handleDownload = (e) => {
@@ -172,9 +176,13 @@ function PamphletViewer({
         <ScrollablePreview>
           <img 
             src={previewUrl} 
+            srcSet={`${previewSmallUrl} 720w, ${previewUrl} 1200w`}
+            sizes="(max-width: 900px) 100vw, 860px"
             alt="TEDxCityUHK2026 Event Pamphlet Preview"
             loading="lazy"
             decoding="async"
+            width="1200"
+            height="6324"
           />
         </ScrollablePreview>
       </PamphletCard>
@@ -200,11 +208,16 @@ export default function HomePage() {
             
             <div className="w-full bg-black flex justify-center">
                 <img
-                    src={Event_details}
+                    src={EventDetailsLarge}
+                    srcSet={`${EventDetailsSmall} 720w, ${EventDetailsLarge} 1600w`}
+                    sizes="100vw"
                     alt="TEDx CityUHK Hero"
                     className="w-full h-auto max-w-none object-contain"
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
+                    fetchPriority="high"
+                    width="1600"
+                    height="2430"
                 />
             </div>
 
@@ -247,11 +260,15 @@ export default function HomePage() {
             <SponsorCard />
             <div className="w-full">
                 <img
-                    src={TEDxTeam}
+                    src={TEDxTeamLarge}
+                    srcSet={`${TEDxTeamSmall} 960w, ${TEDxTeamLarge} 1920w`}
+                    sizes="100vw"
                     alt="TEDx CityUHK Team"
                     className="w-full h-auto"
                     loading="lazy"
                     decoding="async"
+                    width="1920"
+                    height="1500"
                 />
             </div>
             <div className="w-full flex justify-end pr-4 sm:pr-6 md:pr-8 lg:pr-10 pb-4 sm:pb-6 md:pb-8 lg:pb-10">

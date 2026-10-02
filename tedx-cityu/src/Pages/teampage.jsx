@@ -11,9 +11,13 @@ import financeSponsorshipData from '../Data/financeSponsorshipData.json';
 import humanResourcesData from '../Data/humanResourcesData.json';
 import speakerRelationsData from '../Data/speakerRelationsData.json';
 import marketingCommunicationData from '../Data/marketingCommunicationData.json';
-import pp1 from "../Assets/TeamCrew/pp1.JPG"
-import pp2 from "../Assets/TeamCrew/pp2.JPG"
-import pp3 from "../Assets/TeamCrew/pp3.JPG"
+import pp1Small from "../AssetsOptimized/TeamCrew/pp1-sm.webp"
+import pp1Large from "../AssetsOptimized/TeamCrew/pp1-lg.webp"
+import pp2Small from "../AssetsOptimized/TeamCrew/pp2-sm.webp"
+import pp2Large from "../AssetsOptimized/TeamCrew/pp2-lg.webp"
+import pp3Small from "../AssetsOptimized/TeamCrew/pp3-sm.webp"
+import pp3Large from "../AssetsOptimized/TeamCrew/pp3-lg.webp"
+import { optimizedVariantName } from "../utils/optimizedAsset";
 
 const breakpoints = { tablet: 1024, mobile: 768, phone: 480 };
 
@@ -685,7 +689,8 @@ export default function TeamPage() {
                             direction={slideDirection}
                         >
                             <MemberCard
-                                img={require("../Assets/Members/" + active.img)}
+                                img={require("../AssetsOptimized/Members/" + optimizedVariantName(active.img, "lg"))}
+                                imgSmall={require("../AssetsOptimized/Members/" + optimizedVariantName(active.img, "sm"))}
                                 fname={active.fname}
                                 lname={active.lname}
                                 major={active.major}
@@ -723,7 +728,8 @@ export default function TeamPage() {
                             return (
                                 <MemberCard
                                     key={index}
-                                    img={require("../Assets/Members/" + item.img)}
+                                    img={require("../AssetsOptimized/Members/" + optimizedVariantName(item.img, "lg"))}
+                                    imgSmall={require("../AssetsOptimized/Members/" + optimizedVariantName(item.img, "sm"))}
                                     fname={item.fname}
                                     lname={item.lname}
                                     major={item.major}
@@ -785,7 +791,8 @@ export default function TeamPage() {
                             return (
                                 <MemberCard
                                     key={realIndex}
-                                    img={require("../Assets/Members/" + item.img)}
+                                    img={require("../AssetsOptimized/Members/" + optimizedVariantName(item.img, "lg"))}
+                                    imgSmall={require("../AssetsOptimized/Members/" + optimizedVariantName(item.img, "sm"))}
                                     fname={item.fname}
                                     lname={item.lname}
                                     major={item.major}
@@ -819,10 +826,14 @@ export default function TeamPage() {
                 <LeftPanel>
                     <StackedImage>
                     <ImageWithOverlay
-                        src={pp1}
+                        src={pp1Large}
+                        srcSet={`${pp1Small} 768w, ${pp1Large} 1600w`}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         alt="Image Title 1"
-                        loading="lazy"
+                        loading="eager"
                         decoding="async"
+                        width="1600"
+                        height="1067"
                     />
                     <ImageTextOverlay2>
                         <span className="about-part">WHY NOT LEARN </span>
@@ -830,10 +841,14 @@ export default function TeamPage() {
                     </StackedImage>
                     <StackedImage2>
                     <ImageWithOverlay
-                        src={pp2}
+                        src={pp2Large}
+                        srcSet={`${pp2Small} 768w, ${pp2Large} 1600w`}
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         alt="Image Title 2"
-                        loading="lazy"
+                        loading="eager"
                         decoding="async"
+                        width="1600"
+                        height="1067"
                     />
                     <ImageTextOverlay>
                         <span className="about-part">ABOUT</span>
@@ -842,7 +857,17 @@ export default function TeamPage() {
                     </StackedImage2>
                 </LeftPanel>
                 <RightPanel>
-                    <EventPhoto src={pp3} alt="Image Title 3" />
+                    <EventPhoto
+                        src={pp3Large}
+                        srcSet={`${pp3Small} 768w, ${pp3Large} 1600w`}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        alt="TEDxCityUHK committee"
+                        loading="eager"
+                        decoding="async"
+                        fetchPriority="high"
+                        width="1600"
+                        height="1067"
+                    />
                 </RightPanel>
             </TopSection>
             

@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { submitRegistration } from '../services/registrationService';
-import p1 from '../Assets/About/p1.png';
-import p2 from '../Assets/About/p2.png';
-import p3 from '../Assets/About/p3.png';
+import p1Small from '../AssetsOptimized/About/p1-sm.webp';
+import p1Large from '../AssetsOptimized/About/p1-lg.webp';
+import p2Small from '../AssetsOptimized/About/p2-sm.webp';
+import p2Large from '../AssetsOptimized/About/p2-lg.webp';
+import p3Small from '../AssetsOptimized/About/p3-sm.webp';
+import p3Large from '../AssetsOptimized/About/p3-lg.webp';
 
 const Container = styled.div`
   min-height: 100vh;
@@ -435,11 +438,11 @@ export default function RegistrationPage() {
       <HeroSection>
         <LeftPanel>
           <HeroImageBlock>
-            <HeroImage src={p1} alt="TEDx event scene" />
+            <HeroImage src={p1Large} srcSet={`${p1Small} 640w, ${p1Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx event scene" loading="eager" decoding="async" width="1400" height="1005" />
             <TopOverlayText>WHY NOT</TopOverlayText>
           </HeroImageBlock>
           <AngledHeroImageBlock>
-            <HeroImage src={p2} alt="TEDx team moment" />
+            <HeroImage src={p2Large} srcSet={`${p2Small} 640w, ${p2Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx team moment" loading="eager" decoding="async" width="1400" height="1007" />
             <BottomOverlayText>
               <span className="register">REGISTER</span>
               <span className="now">NOW</span>
@@ -447,7 +450,7 @@ export default function RegistrationPage() {
           </AngledHeroImageBlock>
         </LeftPanel>
         <RightPanel>
-          <HeroImage src={p3} alt="TEDx audience" />
+          <HeroImage src={p3Large} srcSet={`${p3Small} 640w, ${p3Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx audience" loading="eager" decoding="async" fetchPriority="high" width="1400" height="845" />
         </RightPanel>
       </HeroSection>
       <FormContainer>

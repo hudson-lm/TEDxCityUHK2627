@@ -89,7 +89,7 @@ const RoleBox = styled.div`
 `;
 
 const MemberCardInner = (
-  { img, fname, lname, major, position, deptColor, cardRadius, isExpanded, onClick },
+  { img, imgSmall, fname, lname, major, position, deptColor, cardRadius, isExpanded, onClick },
   ref
 ) => {
   return (
@@ -97,9 +97,13 @@ const MemberCardInner = (
       <ImageShape isExpanded={isExpanded} deptColor={deptColor} cardRadius={cardRadius}>
         <ProfileImg
           src={img}
+          srcSet={imgSmall ? `${imgSmall} 400w, ${img} 800w` : undefined}
+          sizes={isExpanded ? "300px" : "120px"}
           alt={`${fname} ${lname}`}
           loading="lazy"
           decoding="async"
+          width="800"
+          height="1000"
         />
       </ImageShape>
 

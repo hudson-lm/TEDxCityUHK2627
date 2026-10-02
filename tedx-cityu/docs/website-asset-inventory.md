@@ -1,45 +1,54 @@
-# Website asset inventory
+# Website asset inventory and optimization report
 
-Generated from the current production build and src/Assets. No assets were moved, uploaded, converted, or deleted.
+The untouched source files remain in `src/Assets` and are also archived in Google Drive under `Website/2526/Originals`. Web-ready derivatives live in `src/AssetsOptimized` and can be regenerated with `scripts/optimize_assets.py`.
 
-## Snapshot
+## Results
 
-- Total source assets: 94 files / 220.8 MB
-- Included in the current production build: 70 files / 186.1 MB
-- Critical optimization targets (5 MB or larger): 9
-- High-priority targets (1-5 MB): 33
-- Not present in the production build: 24 archive candidates
+- Source images processed: 79 files / 218.8 MB
+- Responsive WebP derivatives: 168 files / 12.8 MB
+- Image-byte reduction: 94.2%
+- Previous Cloudflare upload: about 199 MB
+- Optimized production build: 15.43 MB (14.52 MB media)
+- Production source maps: 0
+- Untouched Drive archive: 82 files; the remaining 12 source entries are empty `.gitkeep` placeholders
 
-## First-pass recommendation
+## Page-by-page display inventory
 
-1. Archive untouched originals under Website/2526/Originals, preserving the current subfolder structure.
-2. Optimize the critical files first, starting with Home, Past Events, and large Crew portraits.
-3. Put only web-sized derivatives in the website repository.
-4. Review every archive candidate before removing anything from the repository.
+| Page / area | Source images | Desktop display target | Phone display target | Loading |
+|---|---|---|---|---|
+| Home event artwork | `Event_details.png` | Up to 1600 px wide | 100vw, 720/1600 candidate | Eager, high priority |
+| Home pamphlet | `pamphlet.png` | Up to 860 px wide inside scroll frame | 100vw, 720 px candidate | Lazy |
+| Home speakers | `Members/Speaker/*` | Three columns, about 380 px per portrait | One column, viewport minus padding | Lazy |
+| Home performers | `Members/Performer/*` | Two columns, up to about 540 px each | One column, viewport minus padding | Lazy |
+| Home sponsors | `Sponsor/*` | Maximum 360×280 CSS px | Maximum 220×180 CSS px | Lazy |
+| Home team | `TEDxTeam2025.png` | 100vw, up to 1920 px source | 100vw, 960 px candidate | Lazy |
+| About top collage | `About/p1.png`–`p3.png` | Each panel about 50vw | Panels reflow to 100vw | Eager; main panel high priority |
+| About body/collage | `About/p4.png`–`p8.png` | 50vw or less by panel | 100vw or 50vw by panel | Lazy |
+| Crew top collage | `TeamCrew/pp1.JPG`–`pp3.JPG` | Each panel about 50vw | Panels reflow to 100vw | Eager; main panel high priority |
+| Crew portraits | `Members/{department}/*` | Expanded 300×350; collapsed 120×200 | 300×350 | Lazy, 400/800 candidates |
+| Past Events | `PastEvents/TEDx Website Design.png` | Six tiles, maximum 1600 px wide | 100vw, 720/1600 candidates | First tile eager; rest lazy |
+| Speaker pages | `About/p1.png`–`p3.png`, `Members/Speaker/*` | 50vw hero panels and portrait | Panels reflow to 100vw | Hero eager, portrait lazy |
+| Event registration | `About/p1.png`–`p3.png` | 50vw hero panels | Panels reflow to 100vw | Eager; main panel high priority |
+| Committee registration | No photographic assets | N/A | N/A | Route-level JS/CSS only |
+| Shared navigation | `logo-black.png`, `logo-white.png` | 384×86 CSS px on desktop | 221×49 CSS px in tested phone viewport | Immediate |
 
-## Twenty largest production assets
+Exact original filenames, dimensions, byte sizes, source references, routes, and Drive destinations remain in `docs/website-asset-inventory.csv`.
 
-| Asset | MB | Dimensions | Page / area | Priority |
-|---|---:|---:|---|---|
-| TEDxTeam2025.png | 20.447 | 5120×4000 | Home | Critical |
-| PastEvents/TEDx Website Design.png | 18.868 | 3122×23156 | Past Events | Critical |
-| Members/Speaker Relations/Adryan Tan.jpeg | 9.202 | 3803×5704 | Crew | Critical |
-| Members/Speaker/Elin_Fu.jpg | 8.693 | 3563×5345 | Speakers | Critical |
-| background3.JPG | 6.938 | 6000×4000 | Home banner | Critical |
-| Members/Speaker/Emi_Wong.jpg | 5.716 | 3648×5472 | Speakers | Critical |
-| Event_details.png | 5.626 | 6750×10250 | Home | Critical |
-| TeamCrew/pp2.JPG | 5.438 | 6000×4000 | Crew | Critical |
-| Members/Marketing and Communication/Clayton Teo.jpg | 5.41 | 2624×3936 | Crew | Critical |
-| About/p3.png | 4.843 | 2682×1618 | About; Event registration; Speakers | High |
-| TeamCrew/pp1.JPG | 4.594 | 6000×4000 | Crew | High |
-| About/p4.png | 4.537 | 1950×1615 | About | High |
-| About/p1.png | 4.518 | 2248×1613 | About; Event registration; Speakers | High |
-| About/p2.png | 4.483 | 2244×1614 | About; Event registration; Speakers | High |
-| TeamCrew/pp3.JPG | 3.876 | 6000×4000 | Crew | High |
-| Members/Creative/Clancy Clarence Natania.jpeg | 3.869 | 4032×3024 | Crew | High |
-| About/p7.png | 3.758 | 1956×1619 | About | High |
-| Members/Event Management/Saima.jpeg | 3.627 | 4032×3024 | Crew | High |
-| Members/Creative/Quenisha Yovela.jpeg | 3.562 | 4280×5302 | Crew | High |
-| Members/Human Resources/Aileen Galih.jpeg | 3.328 | 5712×4284 | Crew | High |
+## Delivery behavior
 
-The complete inventory, including source references and suggested Drive destinations, is in docs/website-asset-inventory.csv.
+- React routes remain code-split, so route chunks and their image references are requested only when visited.
+- Home's initial viewport was observed loading only the shared logo and Home event artwork; no About, Crew, or Past Events media was requested.
+- All content images now carry explicit intrinsic dimensions or are contained by fixed-aspect layout boxes to prevent layout shifts.
+- `_headers` gives hashed `/static/*` files a one-year immutable cache while HTML remains revalidated.
+- `.env.production` disables JavaScript source-map generation.
+- The 3122×23156 Past Events source is rendered as six seamless WebP tiles so only nearby sections download.
+
+## Verification
+
+- Production build: passed
+- Desktop visual checks: Home, About, Crew, Past Events, Committee Registration
+- Phone visual checks at 390×844: Home, About, Crew, Past Events, Committee Registration
+- Horizontal overflow: none on tested phone routes
+- Original/WebP comparison: artwork edges, color, portrait detail, and crop were visually preserved
+- Committee form: CityUHK email rule, CV/portfolio link fields, conditional portfolio requirement, and required acknowledgements present
+- Google Sheet: `Applications` headers and existing synchronized submissions verified read-only after the build

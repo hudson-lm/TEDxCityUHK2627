@@ -1,9 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import Background1 from '../Assets/background1.png';
-import Background2 from '../Assets/background2.png';
-import Background3 from '../Assets/background3.JPG';
-import Background4 from '../Assets/MetamorphosisLogo.png';
+import Background1Small from '../AssetsOptimized/background1-sm.webp';
+import Background1Large from '../AssetsOptimized/background1-lg.webp';
+import Background2Small from '../AssetsOptimized/background2-sm.webp';
+import Background2Large from '../AssetsOptimized/background2-lg.webp';
+import Background3Small from '../AssetsOptimized/background3-sm.webp';
+import Background3Large from '../AssetsOptimized/background3-lg.webp';
+import Background4 from '../AssetsOptimized/MetamorphosisLogo-lg.webp';
 import Timer from './timer.jsx';
 
 
@@ -41,17 +44,17 @@ const Text = styled.h1`
 `;
 
 const Layout1 = styled.div`
-    background-image : url(${Background1});
+    background-image: image-set(url(${Background1Small}) 1x, url(${Background1Large}) 2x);
     background-size: cover;
     background-position : center;
 `;
 const Layout2 = styled.div`
-    background-image : url(${Background2});
+    background-image: image-set(url(${Background2Small}) 1x, url(${Background2Large}) 2x);
     background-size: cover;
     background-position : center;
 `;
 const Layout3 = styled.div`
-    background-image : url(${Background3});
+    background-image: image-set(url(${Background3Small}) 1x, url(${Background3Large}) 2x);
     background-size: cover;
     background-position : center;    
 `;
@@ -166,6 +169,8 @@ export const Banner = ({text1,text2, show=true}) =>{
                             className="w-[80%] mb-10"
                             loading="lazy"
                             decoding="async"
+                            width="528"
+                            height="528"
                         />
                     </ImageContainer>
                     <Container>

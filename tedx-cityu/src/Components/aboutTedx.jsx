@@ -1,13 +1,21 @@
 import React, { useEffect } from "react";
 import { styled } from "styled-components";
-import p1 from "../Assets/About/p1.png"
-import p2 from "../Assets/About/p2.png"
-import p3 from "../Assets/About/p3.png"
-import p4 from "../Assets/About/p4.png"
-import p5 from "../Assets/About/p5.png"
-import p6 from "../Assets/About/p6.png"
-import p7 from "../Assets/About/p7.png"
-import p8 from "../Assets/About/p8.png"
+import p1Small from "../AssetsOptimized/About/p1-sm.webp"
+import p1Large from "../AssetsOptimized/About/p1-lg.webp"
+import p2Small from "../AssetsOptimized/About/p2-sm.webp"
+import p2Large from "../AssetsOptimized/About/p2-lg.webp"
+import p3Small from "../AssetsOptimized/About/p3-sm.webp"
+import p3Large from "../AssetsOptimized/About/p3-lg.webp"
+import p4Small from "../AssetsOptimized/About/p4-sm.webp"
+import p4Large from "../AssetsOptimized/About/p4-lg.webp"
+import p5Small from "../AssetsOptimized/About/p5-sm.webp"
+import p5Large from "../AssetsOptimized/About/p5-lg.webp"
+import p6Small from "../AssetsOptimized/About/p6-sm.webp"
+import p6Large from "../AssetsOptimized/About/p6-lg.webp"
+import p7Small from "../AssetsOptimized/About/p7-sm.webp"
+import p7Large from "../AssetsOptimized/About/p7-lg.webp"
+import p8Small from "../AssetsOptimized/About/p8-sm.webp"
+import p8Large from "../AssetsOptimized/About/p8-lg.webp"
 import { Instagram, Linkedin, Youtube, Facebook } from "lucide-react";
 
 // import TEDTeam from "../Assets/TEDxTeam.png";
@@ -1052,10 +1060,14 @@ export default function AboutTedx({ show = true }) {
           <LeftPanel>
             <StackedImage>
               <ImageWithOverlay
-                src={p1}
+                src={p1Large}
+                srcSet={`${p1Small} 640w, ${p1Large} 1400w`}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt="Image Title 1"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
+                width="1400"
+                height="1005"
               />
               <ImageTextOverlay2>
                 <span className="about-part">WHY NOT LEARN </span>
@@ -1063,10 +1075,14 @@ export default function AboutTedx({ show = true }) {
             </StackedImage>
             <StackedImage2>
               <ImageWithOverlay
-                src={p2}
+                src={p2Large}
+                srcSet={`${p2Small} 640w, ${p2Large} 1400w`}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt="Image Title 2"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
+                width="1400"
+                height="1007"
               />
               <ImageTextOverlay>
                 <span className="about-part">ABOUT</span>
@@ -1075,7 +1091,7 @@ export default function AboutTedx({ show = true }) {
             </StackedImage2>
           </LeftPanel>
           <RightPanel>
-            <EventPhoto src={p3} alt="Image Title 3" />
+            <EventPhoto src={p3Large} srcSet={`${p3Small} 640w, ${p3Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDxCityUHK audience" loading="eager" decoding="async" fetchPriority="high" width="1400" height="845" />
           </RightPanel>
         </TopSection>
 
@@ -1084,11 +1100,15 @@ export default function AboutTedx({ show = true }) {
           <MonitorPanel>
             <Monitor>
               <img
-                src={p5}
+                src={p5Large}
+                srcSet={`${p5Small} 640w, ${p5Large} 1400w`}
+                sizes="(max-width: 768px) 100vw, 50vw"
                 alt="TEDx Event"
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 loading="lazy"
                 decoding="async"
+                width="1400"
+                height="1588"
               />
             </Monitor>
           </MonitorPanel>
@@ -1110,7 +1130,7 @@ export default function AboutTedx({ show = true }) {
         {/* Mid-Lower Section */}
         <MidLowerSection>
           <TealXPanel>
-            <EventPhoto src={p4} alt="TEDx Event" />
+            <EventPhoto src={p4Large} srcSet={`${p4Small} 640w, ${p4Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx event" loading="lazy" decoding="async" width="1400" height="1159" />
           </TealXPanel>
           <LoremPanel>
             <LoremText>
@@ -1215,14 +1235,14 @@ export default function AboutTedx({ show = true }) {
           </SocialPanel>
           <ImageCollage>
             <LeftCollage>
-              <CollageImg src={p6} alt="Image Footer 1" />
+              <CollageImg src={p6Large} srcSet={`${p6Small} 640w, ${p6Large} 857w`} sizes="50vw" alt="TEDx event collage" loading="lazy" decoding="async" width="857" height="1613" />
             </LeftCollage>
             <RightCollage>
               <RightImage1>
-                <CollageImg src={p7} alt="Image Footer 2" />
+                <CollageImg src={p7Large} srcSet={`${p7Small} 640w, ${p7Large} 1400w`} sizes="50vw" alt="TEDx event collage" loading="lazy" decoding="async" width="1400" height="1159" />
               </RightImage1>
               <RightImage2>
-                <CollageImg src={p8} alt="Image Footer 3" />
+                <CollageImg src={p8Large} srcSet={`${p8Small} 640w, ${p8Large} 1400w`} sizes="50vw" alt="TEDx event collage" loading="lazy" decoding="async" width="1400" height="1394" />
               </RightImage2>
             </RightCollage>
           </ImageCollage>

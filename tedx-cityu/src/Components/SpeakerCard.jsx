@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import Speakerdata from "../Data/SpeakerData.json";
+import { optimizedVariantName } from "../utils/optimizedAsset";
 
 const Container = styled.div`
   background-color: rgb(0, 0, 0);
@@ -50,12 +51,16 @@ export default function SpeakerCard() {
             <Card className="flex flex-col items-center overflow-hidden rounded-md w-full">
               <div className="w-full aspect-[3/4] overflow-hidden rounded-md">
                 <Image
-                  src={require("../Assets/Members/Speaker/" + item.img)}
+                  src={require("../AssetsOptimized/Members/Speaker/" + optimizedVariantName(item.img, "lg"))}
+                  srcSet={`${require("../AssetsOptimized/Members/Speaker/" + optimizedVariantName(item.img, "sm"))} 400w, ${require("../AssetsOptimized/Members/Speaker/" + optimizedVariantName(item.img, "lg"))} 800w`}
+                  sizes="(max-width: 639px) calc(100vw - 2rem), (max-width: 1023px) 50vw, 380px"
                   alt={item.fname}
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
                   style={getImageStyle(item.img)}
                   loading="lazy"
                   decoding="async"
+                  width="800"
+                  height="1067"
                 />
               </div>
               <SpeakerName className="text-center text-md md:text-3xl mt-2 md:mt-5 md:mb-7 text-white">

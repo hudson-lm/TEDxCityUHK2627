@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 import Sponsordata from "../Data/SponsorData.json";
+import { optimizedVariantName } from "../utils/optimizedAsset";
 
 const Container = styled.div`
   background-color: black;
@@ -64,11 +65,15 @@ export default function SponsorCard() {
               <Link key={index} to={item.path} target="_blank" rel="noopener noreferrer">
                 <Card>
                   <Image 
-                    src={require("../Assets/Sponsor/" + item.img)}
+                    src={require("../AssetsOptimized/Sponsor/" + optimizedVariantName(item.img, "lg"))}
+                    srcSet={`${require("../AssetsOptimized/Sponsor/" + optimizedVariantName(item.img, "sm"))} 360w, ${require("../AssetsOptimized/Sponsor/" + optimizedVariantName(item.img, "lg"))} 720w`}
+                    sizes="(max-width: 768px) 220px, 360px"
                     alt={item.name}
                     className="rounded-md"
                     loading="lazy"
                     decoding="async"
+                    width="720"
+                    height="480"
                   />
                 </Card>
               </Link>

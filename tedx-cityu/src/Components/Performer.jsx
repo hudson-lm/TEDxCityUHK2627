@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { styled } from "styled-components";
+import { optimizedVariantName } from "../utils/optimizedAsset";
 
 const Container = styled.div``;
 const Wrapper = styled.div``;
@@ -28,11 +29,15 @@ const Performer = ({data}) =>{
             {data.map((item, index) => (
                 <Wrapper key={index} className="flex flex-col items-center md:flex-row md:items-start md:gap-5 md:mt-10 md:mb-10 font-textfont text-center md:text-left justify-center">
                     <Picture
-                        src={require("../Assets/Members/Performer/" + item.img)}
+                        src={require("../AssetsOptimized/Members/Performer/" + optimizedVariantName(item.img, "lg"))}
+                        srcSet={`${require("../AssetsOptimized/Members/Performer/" + optimizedVariantName(item.img, "sm"))} 400w, ${require("../AssetsOptimized/Members/Performer/" + optimizedVariantName(item.img, "lg"))} 800w`}
+                        sizes="(max-width: 767px) 192px, 320px"
                         alt={item.fname}
                         className="object-scale-down w-48 h-48 md:ml-36 mb-5 md:mb-auto mt-10 md:mt-auto md:my-auto rounded-md"
                         loading="lazy"
                         decoding="async"
+                        width="800"
+                        height="450"
                     />
                     <Wrapper className="flex flex-col items-center md:items-start">
                         <TitleText className="font-bold text-3xl md:my-0">

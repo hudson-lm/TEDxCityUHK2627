@@ -3,9 +3,12 @@ import { useParams } from "react-router-dom";
 import { styled } from "styled-components";
 import Speakerdata from "../Data/SpeakerData.json"
 import Speaker from "../Components/Speaker";
-import p1 from '../Assets/About/p1.png';
-import p2 from '../Assets/About/p2.png';
-import p3 from '../Assets/About/p3.png';
+import p1Small from '../AssetsOptimized/About/p1-sm.webp';
+import p1Large from '../AssetsOptimized/About/p1-lg.webp';
+import p2Small from '../AssetsOptimized/About/p2-sm.webp';
+import p2Large from '../AssetsOptimized/About/p2-lg.webp';
+import p3Small from '../AssetsOptimized/About/p3-sm.webp';
+import p3Large from '../AssetsOptimized/About/p3-lg.webp';
 
 const Container = styled.div`
     width: 100%;
@@ -224,11 +227,11 @@ export default function Speakerpage(){
                             <TopSection>
                                 <LeftPanel>
                                     <StackedImage>
-                                        <HeaderImage src={p1} alt="Speaker header scene" />
+                                        <HeaderImage src={p1Large} srcSet={`${p1Small} 640w, ${p1Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="Speaker header scene" loading="eager" decoding="async" width="1400" height="1005" />
                                         <TopText>WHY NOT SEE</TopText>
                                     </StackedImage>
                                     <StackedImage2>
-                                        <HeaderImage src={p2} alt="Speaker spotlight" />
+                                        <HeaderImage src={p2Large} srcSet={`${p2Small} 640w, ${p2Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="Speaker spotlight" loading="eager" decoding="async" width="1400" height="1007" />
                                         <BottomText>
                                             <span className="white-part">OUR</span>
                                             <span className="red-part">SPEAKERS</span>
@@ -236,7 +239,7 @@ export default function Speakerpage(){
                                     </StackedImage2>
                                 </LeftPanel>
                                 <RightPanel>
-                                    <HeaderImage src={p3} alt="TEDx audience" />
+                                    <HeaderImage src={p3Large} srcSet={`${p3Small} 640w, ${p3Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx audience" loading="eager" decoding="async" fetchPriority="high" width="1400" height="845" />
                                 </RightPanel>
                             </TopSection>
                         </ContentWrapper>

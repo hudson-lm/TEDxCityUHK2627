@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { styled } from "styled-components";
+import { optimizedVariantName } from "../utils/optimizedAsset";
 
 const Container = styled.div``;
 const Wrapper = styled.div``;
@@ -33,12 +34,16 @@ const Speaker = ({ data }) => {
           {/* Image column – matches text column height */}
           <div className="md:w-1/2 flex items-stretch">
             <Picture
-              src={require("../Assets/Members/Speaker/" + item.img)}
+              src={require("../AssetsOptimized/Members/Speaker/" + optimizedVariantName(item.img, "lg"))}
+              srcSet={`${require("../AssetsOptimized/Members/Speaker/" + optimizedVariantName(item.img, "sm"))} 400w, ${require("../AssetsOptimized/Members/Speaker/" + optimizedVariantName(item.img, "lg"))} 800w`}
+              sizes="(max-width: 767px) calc(100vw - 2rem), 50vw"
               alt={item.fname}
               className="w-full h-auto object-cover rounded-md"
               style={{ maxHeight: "100%" }}
               loading="lazy"
               decoding="async"
+              width="800"
+              height="1067"
             />
           </div>
           {/* Text column */}

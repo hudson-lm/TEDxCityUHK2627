@@ -1,6 +1,7 @@
 import React from "react";
 import { styled } from "styled-components";
 import Performerdata from "../Data/PerformerData.json";
+import { optimizedVariantName } from "../utils/optimizedAsset";
 
 const Container = styled.div`
   background-color: rgb(0, 0, 0);
@@ -43,10 +44,14 @@ export default function PerformerCard() {
         {Performerdata.filter(item => !item._example).map((item, index) => (
           <Card key={index}>
             <Image
-              src={require("../Assets/Members/Performer/" + item.img)}
+              src={require("../AssetsOptimized/Members/Performer/" + optimizedVariantName(item.img, "lg"))}
+              srcSet={`${require("../AssetsOptimized/Members/Performer/" + optimizedVariantName(item.img, "sm"))} 400w, ${require("../AssetsOptimized/Members/Performer/" + optimizedVariantName(item.img, "lg"))} 800w`}
+              sizes="(max-width: 767px) calc(100vw - 2rem), 540px"
               alt={item.fname}
               loading="lazy"
               decoding="async"
+              width="800"
+              height="450"
             />
             <div className="text-center font-textfont font-bold text-xl md:text-2xl py-4 text-white bg-black">
               {item.fname}
