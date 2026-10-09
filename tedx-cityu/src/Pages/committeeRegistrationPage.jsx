@@ -615,7 +615,7 @@ export default function CommitteeRegistrationPage() {
                     maxLength="1000"
                   />
                   <HelpText>
-                    Name the file Name_FirstChoiceDivision (for example, Jessica_Creative) and make sure reviewers can open the link.
+                    Use the file name FirstName_FirstChoiceDepartment (ex: Alice_Creative). Set link access to “Anyone with the link can view.”
                   </HelpText>
                 </Field>
                 <Field>
@@ -631,8 +631,8 @@ export default function CommitteeRegistrationPage() {
                     required={requiresPortfolio}
                   />
                   <HelpText>
-                    Required for Creative or Marketing &amp; Communication. Name the file Name_FirstChoiceDivision (for example,
-                    Jessica_Creative) and make sure reviewers can open the link.
+                    Required if Creative or Marketing &amp; Communication is selected. Use the file name
+                    FirstName_FirstChoiceDepartment (ex: Alice_Creative). Set link access to “Anyone with the link can view.”
                   </HelpText>
                 </Field>
               </Grid>
