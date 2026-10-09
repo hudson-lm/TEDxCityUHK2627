@@ -104,13 +104,29 @@ const BottomOverlayText = styled.div`
   white-space: normal;
   text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
 
-  .register {
+  .lead {
     color: #ffffff;
   }
 
-  .now {
+  .accent {
     color: #eb0028;
   }
+`;
+
+const ArchiveLabel = styled.div`
+  position: absolute;
+  z-index: 1;
+  right: 1rem;
+  bottom: 1.25rem;
+  padding: 0.45rem 0.75rem;
+  background: #ffffff;
+  border: 3px solid #000000;
+  color: #000000;
+  font-family: 'Bungee', sans-serif;
+  font-size: clamp(0.65rem, 1.3vw, 0.9rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 #eb0028;
 `;
 
 const FormContainer = styled.div`
@@ -308,6 +324,19 @@ const ClosedText = styled(SuccessText)`
   line-height: 1.4;
 `;
 
+const StatusPill = styled.span`
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  background: #eb0028;
+  border: 2px solid #000000;
+  color: #ffffff;
+  font-family: 'Bungee', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 3px 3px 0 #000000;
+`;
+
 const getFriendlyErrorMessage = (rawError) => {
   const normalized = (rawError || '').toLowerCase();
 
@@ -439,23 +468,24 @@ export default function RegistrationPage() {
         <LeftPanel>
           <HeroImageBlock>
             <HeroImage src={p1Large} srcSet={`${p1Small} 640w, ${p1Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx event scene" loading="eager" decoding="async" width="1400" height="1005" />
-            <TopOverlayText>WHY NOT</TopOverlayText>
+            <TopOverlayText>{isRegistrationClosed ? "WHAT'S NEXT?" : 'WHY NOT'}</TopOverlayText>
           </HeroImageBlock>
           <AngledHeroImageBlock>
             <HeroImage src={p2Large} srcSet={`${p2Small} 640w, ${p2Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx team moment" loading="eager" decoding="async" width="1400" height="1007" />
             <BottomOverlayText>
-              <span className="register">REGISTER</span>
-              <span className="now">NOW</span>
+              <span className="lead">{isRegistrationClosed ? 'TEDxCityUHK' : 'REGISTER'}</span>
+              <span className="accent">{isRegistrationClosed ? '2027' : 'NOW'}</span>
             </BottomOverlayText>
           </AngledHeroImageBlock>
         </LeftPanel>
         <RightPanel>
+          {isRegistrationClosed && <ArchiveLabel>From our archive</ArchiveLabel>}
           <HeroImage src={p3Large} srcSet={`${p3Small} 640w, ${p3Large} 1400w`} sizes="(max-width: 768px) 100vw, 50vw" alt="TEDx audience" loading="eager" decoding="async" fetchPriority="high" width="1400" height="845" />
         </RightPanel>
       </HeroSection>
       <FormContainer>
         <FormHeader>
-          <FormTitle>Registration</FormTitle>
+          <FormTitle>{isRegistrationClosed ? "What's Next" : 'Registration'}</FormTitle>
         </FormHeader>
 
         <FormBody>
@@ -466,8 +496,9 @@ export default function RegistrationPage() {
           </SuccessScreen>
         ) : isRegistrationClosed ? (
           <SuccessScreen>
-            <ClosedTitle>Registration Closed</ClosedTitle>
-            <ClosedText>Registration closed on April 10, 11:59 PM HKT. Thank you for your interest in TEDxCityUHK 2026.</ClosedText>
+            <StatusPill>In the works</StatusPill>
+            <ClosedTitle>TEDxCityUHK 2027</ClosedTitle>
+            <ClosedText>We're shaping the next chapter. The date, venue, and registration details will be announced here when they're ready.</ClosedText>
           </SuccessScreen>
         ) : (
         <form onSubmit={handleSubmit}>
