@@ -26,6 +26,8 @@ const YEARS_OF_STUDY = [
 
 const PORTFOLIO_REQUIRED_DEPARTMENTS = ['Creative', 'Marketing and Communication'];
 const CITYU_EMAIL_PATTERN = /^[^\s@]+@my\.cityu\.edu\.hk$/i;
+const APPLICATION_DEADLINE_HKT = new Date('2026-10-21T23:59:00+08:00');
+const isApplicationDeadlinePassed = () => Date.now() >= APPLICATION_DEADLINE_HKT.getTime();
 
 const Page = styled.main`
   min-height: 100vh;
@@ -447,11 +449,27 @@ export default function CommitteeRegistrationPage() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [message, setMessage] = useState('');
+  const [isApplicationClosed, setIsApplicationClosed] = useState(isApplicationDeadlinePassed);
   const requiresPortfolio = PORTFOLIO_REQUIRED_DEPARTMENTS.includes(form.firstChoice)
     || PORTFOLIO_REQUIRED_DEPARTMENTS.includes(form.secondChoice);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
+    if (isApplicationDeadlinePassed()) {
+      setIsApplicationClosed(true);
+      return undefined;
+    }
+
+    const deadlineTimer = window.setTimeout(() => {
+      setIsApplicationClosed(true);
+      setLoading(false);
+      setMessage('');
+    }, APPLICATION_DEADLINE_HKT.getTime() - Date.now());
+
+    return () => window.clearTimeout(deadlineTimer);
   }, []);
 
   const handleChange = (event) => {
@@ -463,6 +481,11 @@ export default function CommitteeRegistrationPage() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setMessage('');
+
+    if (isApplicationDeadlinePassed()) {
+      setIsApplicationClosed(true);
+      return;
+    }
 
     if (form.secondChoice && form.firstChoice === form.secondChoice) {
       setMessage('Please select two different department preferences.');
@@ -504,6 +527,7 @@ export default function CommitteeRegistrationPage() {
           <StageDetails aria-label="Recruitment details">
             <span>2026–27 season</span>
             <span>City University of Hong Kong</span>
+            <span>Applications close <time dateTime="2026-10-21T23:59:00+08:00">21 Oct, 11:59 PM HKT</time></span>
           </StageDetails>
         </HeroInner>
       </Hero>
@@ -526,6 +550,12 @@ export default function CommitteeRegistrationPage() {
               <div aria-hidden="true">✓</div>
               <h2>Application received</h2>
               <p>Thank you for wanting to build TEDxCityUHK with us. We have saved your application and will contact you using the email address you provided.</p>
+            </SuccessPanel>
+          ) : isApplicationClosed ? (
+            <SuccessPanel role="status">
+              <div aria-hidden="true">×</div>
+              <h2>Applications closed</h2>
+              <p>Committee applications closed on 21 October 2026 at 11:59 PM HKT. Thank you for your interest in TEDxCityUHK.</p>
             </SuccessPanel>
           ) : (
             <form onSubmit={handleSubmit}>
