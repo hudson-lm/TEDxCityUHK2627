@@ -159,59 +159,10 @@ const StageDetails = styled.div`
 
 const Content = styled.section`
   display: grid;
-  grid-template-columns: minmax(250px, 0.65fr) minmax(0, 1.35fr);
-  gap: clamp(2rem, 5vw, 5rem);
-  width: min(1080px, calc(100% - 2rem));
+  grid-template-columns: minmax(0, 1fr);
+  width: min(760px, calc(100% - 2rem));
   margin: 0 auto;
   padding: clamp(4rem, 8vw, 7rem) 0;
-
-  @media (max-width: 850px) {
-    grid-template-columns: 1fr;
-  }
-`;
-
-const Aside = styled.aside`
-  align-self: start;
-  position: relative;
-  padding: 2.5rem 2rem 2.25rem;
-  color: #f8efdf;
-  background:
-    linear-gradient(135deg, rgba(255,255,255,0.045), transparent 35%),
-    #5a0d20;
-  border: 1px solid #c7a467;
-  box-shadow: 0 20px 45px rgba(52, 12, 20, 0.2);
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 1.25rem;
-    right: 1.25rem;
-    height: 1px;
-    background: rgba(216, 183, 119, 0.52);
-  }
-
-  &::before { top: 1rem; }
-  &::after { bottom: 1rem; }
-
-  h2 {
-    margin: 0 0 1.15rem;
-    font-family: Georgia, 'Times New Roman', serif;
-    font-size: 2rem;
-    font-weight: 400;
-    line-height: 1.05;
-  }
-
-  p, li {
-    color: #e6dbcc;
-    font-family: 'Commissioner', sans-serif;
-    font-size: 0.92rem;
-    line-height: 1.7;
-  }
-
-  ul { padding-left: 1.25rem; }
-  li + li { margin-top: 0.6rem; }
-  li::marker { color: #d8b777; }
 `;
 
 const SectionKicker = styled.p`
@@ -533,17 +484,6 @@ export default function CommitteeRegistrationPage() {
       </Hero>
 
       <Content>
-        <Aside>
-          <SectionKicker>Act I · Before you apply</SectionKicker>
-          <h2>Your call sheet</h2>
-          <p>Committee work is collaborative, hands-on, and spread across the event cycle.</p>
-          <ul>
-            <li>Choose the departments that best match your interests.</li>
-            <li>Be specific about the skills and perspective you can bring.</li>
-            <li>Shortlisted applicants will be contacted by the team.</li>
-          </ul>
-        </Aside>
-
         <FormCard>
           {submitted ? (
             <SuccessPanel role="status">
