@@ -553,7 +553,6 @@ export default function CommitteeRegistrationPage() {
             </SuccessPanel>
           ) : isApplicationClosed ? (
             <SuccessPanel role="status">
-              <div aria-hidden="true">×</div>
               <h2>Applications closed</h2>
               <p>Committee applications closed on 21 October 2026 at 11:59 PM HKT. Thank you for your interest in TEDxCityUHK.</p>
             </SuccessPanel>
